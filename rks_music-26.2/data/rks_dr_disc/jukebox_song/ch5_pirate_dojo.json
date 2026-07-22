@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 52.36,
+    "comparator_output": 5,
+    "description": "Toby Fox - Pirate Dojo",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch5_pirate_dojo"
+    }
+}

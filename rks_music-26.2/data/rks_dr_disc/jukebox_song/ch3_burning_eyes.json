@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 65.08,
+    "comparator_output": 3,
+    "description": "Toby Fox - BURNING EYES",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch3_burning_eyes"
+    }
+}

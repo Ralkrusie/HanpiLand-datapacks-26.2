@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 192.02,
+    "comparator_output": 5,
+    "description": "Toby Fox - Flower Man",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch5_flower_man"
+    }
+}

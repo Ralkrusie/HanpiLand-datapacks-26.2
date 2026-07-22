@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 22.15,
+    "comparator_output": 4,
+    "description": "Toby Fox - The Ol’ Jitterbug",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch4_the_ol_jitterbug"
+    }
+}

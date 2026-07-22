@@ -1,0 +1,39 @@
+{
+  "anvil_cost": 4,
+  "description": {
+    "translate": "滋养",
+    "color": "#8CE08C",
+    "extra": [
+      {
+        "translate": " 周期性获得饱和效果",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:tick": [
+        {
+            "effect": {
+                "type": "run_function",
+                "function": "rks_lite:saturation"
+            }
+        }
+    ]
+  },
+  "max_cost": {
+    "base": 64,
+    "per_level_above_first": 11
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 64,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "hand",
+    "head"
+  ],
+  "supported_items": "#rks_lite:enchantable/totem_head",
+  "weight": 1
+}

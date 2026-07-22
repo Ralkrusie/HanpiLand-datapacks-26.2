@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 42.25,
+    "comparator_output": 4,
+    "description": "Toby Fox - Piano that may not be played that well",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch4_piano_that_may_not_be_played_that_well"
+    }
+}

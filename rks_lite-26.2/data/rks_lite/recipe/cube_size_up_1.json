@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:book",
+        "minecraft:slime_ball"
+    ],
+    "result": {
+        "id": "minecraft:enchanted_book",
+        "components": {
+            "minecraft:stored_enchantments": {
+                "rks_lite:cube_size_up": 1
+            }
+        },
+        "count": 1
+    }
+}

@@ -1,0 +1,66 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "translate": "坚韧",
+    "color": "#8CE08C",
+    "extra": [
+      {
+        "translate": " 提升坐骑的防护能力",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:damage_protection": [
+      {
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 4.0,
+            "per_level_above_first": 4.0
+          }
+        },
+        "requirements": {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "tags": [
+              {
+                "expected": false,
+                "id": "minecraft:bypasses_invulnerability"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 2,
+          "per_level_above_first": 1
+        },
+        "attribute": "minecraft:armor_toughness",
+        "id": "rks_lite:enchantment.sturdy",
+        "operation": "add_value"
+      }
+    ]
+  },
+  "exclusive_set": "#minecraft:exclusive_set/armor",
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 4,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "body"
+  ],
+  "supported_items": "#rks_lite:enchantable/mount_armor",
+  "weight": 10
+}

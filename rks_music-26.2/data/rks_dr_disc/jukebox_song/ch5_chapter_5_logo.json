@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 8.16,
+    "comparator_output": 5,
+    "description": "Toby Fox - Chapter 5 Logo",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch5_chapter_5_logo"
+    }
+}

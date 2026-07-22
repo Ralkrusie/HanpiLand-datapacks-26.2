@@ -1,0 +1,43 @@
+{
+  "anvil_cost": 3,
+  "description": {
+    "translate": "滑溜",
+    "color": "#55ffff",
+    "extra": [
+      {
+        "translate": " 减少地面摩擦力",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.3333,
+          "per_level_above_first": -0.3333
+        },
+        "attribute": "minecraft:friction_modifier",
+        "id": "rks_lite:enchantment.skate",
+        "operation": "add_multiplied_total"
+      }
+    ]
+  },
+  "exclusive_set": "#rks_lite:exclusive_set/boots_friction",
+  "max_cost": {
+    "base": 20,
+    "per_level_above_first": 10
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#foot_armor",
+  "weight": 2
+}

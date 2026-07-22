@@ -1,0 +1,100 @@
+{
+  "anvil_cost": 4,
+  "description": {
+    "translate": "敏捷",
+    "color": "#55e3ff",
+    "extra": [
+      {
+        "translate": " 提升坐骑的机动性",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 1,
+          "per_level_above_first": 1
+        },
+        "attribute": "minecraft:movement_speed",
+        "id": "rks_lite:enchantment.agility",
+        "operation": "add_multiplied_base"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 1,
+          "per_level_above_first": 1
+        },
+        "attribute": "minecraft:jump_strength",
+        "id": "rks_lite:enchantment.agility",
+        "operation": "add_multiplied_base"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 1,
+          "per_level_above_first": 1
+        },
+        "attribute": "minecraft:step_height",
+        "id": "rks_lite:enchantment.agility",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.1,
+          "per_level_above_first": 0.1
+        },
+        "attribute": "minecraft:water_movement_efficiency",
+        "id": "rks_lite:enchantment.agility",
+        "operation": "add_value"
+      },
+     {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 5,
+          "per_level_above_first": 5
+        },
+        "attribute": "minecraft:safe_fall_distance",
+        "id": "rks_lite:enchantment.agility",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.2,
+          "per_level_above_first": 0.2
+        },
+        "attribute": "minecraft:fall_damage_multiplier",
+        "id": "rks_lite:enchantment.agility",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 1,
+          "per_level_above_first": 1
+        },
+        "attribute": "minecraft:flying_speed",
+        "id": "rks_lite:enchantment.agility",
+        "operation": "add_multiplied_base"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": ["saddle", "body"],
+  "supported_items": "#rks_lite:enchantable/saddle",
+  "weight": 1
+}

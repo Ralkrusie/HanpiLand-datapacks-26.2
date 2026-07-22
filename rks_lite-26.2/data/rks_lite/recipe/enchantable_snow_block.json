@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        "minecraft:snow_block"
+    ],
+    "result": {
+        "id": "minecraft:snow_block",
+        "count": 1,
+        "components": {
+            "custom_name": {
+                "translate": "可附魔雪块",
+                "italic": false
+            },
+            "enchantable": {"value": 1}
+        }
+    }
+}

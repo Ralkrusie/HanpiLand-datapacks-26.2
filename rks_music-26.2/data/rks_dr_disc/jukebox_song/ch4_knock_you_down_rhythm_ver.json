@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 137.85,
+    "comparator_output": 4,
+    "description": "Toby Fox - Knock You Down!! (Rhythm Ver.)",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch4_knock_you_down_rhythm_ver"
+    }
+}

@@ -1,0 +1,123 @@
+{
+  "anvil_cost": 4,
+  "description": {
+    "translate": "神圣恩典",
+    "color": "#FFFFAA",
+    "extra": [
+      {
+        "translate": " 用攻击力换取多种属性加成",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -1,
+          "per_level_above_first": -1
+        },
+        "attribute": "minecraft:attack_damage",
+        "id": "rks_lite:enchantment.grace",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 2,
+          "per_level_above_first": 2
+        },
+        "attribute": "minecraft:max_health",
+        "id": "rks_lite:enchantment.grace",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 2,
+          "per_level_above_first": 2
+        },
+        "attribute": "minecraft:armor_toughness",
+        "id": "rks_lite:enchantment.grace",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.1,
+          "per_level_above_first": -0.1
+        },
+        "attribute": "minecraft:fall_damage_multiplier",
+        "id": "rks_lite:enchantment.grace",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.15,
+          "per_level_above_first": -0.15
+        },
+        "attribute": "minecraft:burning_time",
+        "id": "rks_lite:enchantment.grace",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.2,
+          "per_level_above_first": 0.2
+        },
+        "attribute": "minecraft:movement_efficiency",
+        "id": "rks_lite:enchantment.grace",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.2,
+          "per_level_above_first": 0.2
+        },
+        "attribute": "minecraft:water_movement_efficiency",
+        "id": "rks_lite:enchantment.grace",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.25,
+          "per_level_above_first": 0.25
+        },
+        "attribute": "minecraft:oxygen_bonus",
+        "id": "rks_lite:enchantment.grace",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.5,
+          "per_level_above_first": 0.5
+        },
+        "attribute": "minecraft:luck",
+        "id": "rks_lite:enchantment.grace",
+        "operation": "add_value"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "armor"
+  ],
+  "exclusive_set": "#rks_lite:exclusive_set/choice",
+  "supported_items": "#minecraft:enchantable/armor",
+  "weight": 1
+}

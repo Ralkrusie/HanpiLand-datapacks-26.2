@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 26.67,
+    "comparator_output": 2,
+    "description": "Toby Fox - Cool Mixtape",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch2_cool_mixtape"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 49.5,
+    "comparator_output": 2,
+    "description": "Toby Fox - Bluebird of Misfortune",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch2_bluebird_of_misfortune"
+    }
+}

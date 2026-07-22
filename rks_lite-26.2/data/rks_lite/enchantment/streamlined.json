@@ -1,0 +1,42 @@
+{
+  "anvil_cost": 6,
+  "description": {
+    "translate": "破风",
+    "color": "#55e3ff",
+    "extra": [
+      {
+        "translate": " 减少空气阻力",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.25,
+          "per_level_above_first": -0.25
+        },
+        "attribute": "minecraft:air_drag_modifier",
+        "id": "rks_lite:enchantment.streamlined",
+        "operation": "add_multiplied_total"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "chest"
+  ],
+  "supported_items": "#chest_armor",
+  "weight": 1
+}

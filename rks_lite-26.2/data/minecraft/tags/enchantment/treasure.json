@@ -1,0 +1,14 @@
+{
+    "replace": false,
+    "values": [
+        "rks_lite:fight_me",
+        "rks_lite:shared_fate",
+        "rks_lite:contract",
+        "rks_lite:grace",
+        "rks_lite:desiccating",
+        "rks_lite:grass_walker",
+        "rks_lite:magma_dancer",
+        "rks_lite:taiko",
+        "rks_lite:sturdy"
+    ]
+}

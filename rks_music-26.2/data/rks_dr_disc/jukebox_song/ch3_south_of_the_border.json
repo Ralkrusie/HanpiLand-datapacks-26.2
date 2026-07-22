@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 12,
+    "comparator_output": 3,
+    "description": "Toby Fox - SOUTH OF THE BORDER!!",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch3_south_of_the_border"
+    }
+}

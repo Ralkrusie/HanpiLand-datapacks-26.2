@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 25.6,
+    "comparator_output": 3,
+    "description": "Toby Fox - Sound Check",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch3_sound_check"
+    }
+}

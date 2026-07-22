@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 75.22,
+    "comparator_output": 5,
+    "description": "Toby Fox - Shop 3",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch5_shop_3"
+    }
+}

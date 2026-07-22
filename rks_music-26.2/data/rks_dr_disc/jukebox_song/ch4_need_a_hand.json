@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 46.55,
+    "comparator_output": 4,
+    "description": "Toby Fox - Need a hand!?",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch4_need_a_hand"
+    }
+}

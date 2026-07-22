@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 17.85,
+    "comparator_output": 2,
+    "description": "Toby Fox - Almost To The Guys!",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch2_almost_to_the_guys"
+    }
+}

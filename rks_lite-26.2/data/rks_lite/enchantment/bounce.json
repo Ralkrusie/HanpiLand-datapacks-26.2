@@ -1,0 +1,52 @@
+{
+  "anvil_cost": 4,
+  "description": {
+    "translate": "弹跳",
+    "color": "#55ff55",
+    "extra": [
+      {
+        "translate": " 提升弹性",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.33,
+          "per_level_above_first": 0.33
+        },
+        "attribute": "minecraft:bounciness",
+        "id": "rks_lite:enchantment.bounce",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.2,
+          "per_level_above_first": -0.2
+        },
+        "attribute": "minecraft:fall_damage_multiplier",
+        "id": "rks_lite:enchantment.bounce",
+        "operation": "add_multiplied_total"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 30,
+    "per_level_above_first": 10
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#foot_armor",
+  "weight": 2
+}

@@ -1,0 +1,62 @@
+{
+  "anvil_cost": 1,
+  "description": {
+    "translate": "大运",
+    "color": "light_purple",
+    "extra": [
+      {
+        "translate": " 极大地提升移速",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 18,
+          "per_level_above_first": 0.0
+        },
+        "attribute": "minecraft:movement_speed",
+        "id": "rks_lite:enchantment.flash",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 1,
+          "per_level_above_first": 0.0
+        },
+        "attribute": "minecraft:movement_efficiency",
+        "id": "rks_lite:enchantment.flash",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 1,
+          "per_level_above_first": 0.0
+        },
+        "attribute": "minecraft:water_movement_efficiency",
+        "id": "rks_lite:enchantment.flash",
+        "operation": "add_value"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#minecraft:spears",
+  "weight": 1
+}

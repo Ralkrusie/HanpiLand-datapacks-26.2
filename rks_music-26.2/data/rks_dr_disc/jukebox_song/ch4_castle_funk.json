@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 176.64,
+    "comparator_output": 4,
+    "description": "Toby Fox - Castle Funk",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch4_castle_funk"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 75.43,
+    "comparator_output": 1,
+    "description": "Toby Fox - Rude Buster",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch1_rude_buster"
+    }
+}

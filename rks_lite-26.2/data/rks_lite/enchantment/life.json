@@ -1,0 +1,39 @@
+{
+  "anvil_cost": 10,
+  "description": {
+    "translate": "愈伤",
+    "color": "#8CE08C",
+    "extra": [
+      {
+        "translate": " 生命恢复Ⅰ",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:tick": [
+        {
+            "effect": {
+                "type": "run_function",
+                "function": "rks_lite:life"
+            }
+        }
+    ]
+  },
+  "max_cost": {
+    "base": 64,
+    "per_level_above_first": 11
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 64,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "hand",
+    "chest"
+  ],
+  "supported_items": "#rks_lite:enchantable/totem_chest",
+  "weight": 1
+}

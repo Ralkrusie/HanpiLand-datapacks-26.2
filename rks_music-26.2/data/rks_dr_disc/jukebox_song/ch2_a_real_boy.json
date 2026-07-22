@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 15.67,
+    "comparator_output": 2,
+    "description": "Toby Fox - A Real Boy!",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch2_a_real_boy"
+    }
+}

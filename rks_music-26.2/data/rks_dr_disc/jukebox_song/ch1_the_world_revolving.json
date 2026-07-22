@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 101.05,
+    "comparator_output": 1,
+    "description": "Toby Fox - THE WORLD REVOLVING",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch1_the_world_revolving"
+    }
+}

@@ -1,0 +1,50 @@
+{
+	"anvil_cost": 4,
+	"description": {
+		"translate": "灭除之刃",
+		"color": "light_purple",
+		"extra": [
+			{
+				"translate": " 攻击附加额外穿透伤害",
+				"color": "gray",
+				"italic": true
+			}
+		]
+	},
+	"effects": {
+		"minecraft:post_attack": [
+			{
+				"enchanted": "attacker",
+				"affected": "victim",
+				"effect": {
+					"type": "minecraft:damage_entity",
+					"damage_type": "rks_lite:zmq",
+					"min_damage": {
+						"type": "minecraft:linear",
+						"base": 1.0,
+						"per_level_above_first": 1.0
+					},
+					"max_damage": {
+						"type": "minecraft:linear",
+						"base": 1.0,
+						"per_level_above_first": 1.0
+					}
+				}
+			}
+		]
+	},
+	"max_cost": {
+		"base": 20,
+		"per_level_above_first": 10
+	},
+	"max_level": 5,
+	"min_cost": {
+		"base": 10,
+		"per_level_above_first": 10
+	},
+	"slots": [
+		"mainhand"
+	],
+	"supported_items": "#rks_lite:enchantable/all_weapons",
+	"weight": 1
+}

@@ -1,0 +1,21 @@
+{
+	"parent": "rks_lite:first_entry",
+	"criteria": {
+		"get_key": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [{
+					"items": ["minecraft:trial_key", "minecraft:ominous_trial_key"],
+					"components": {
+						"minecraft:enchantments": {"rks_lite:auto_reward": 1}
+					}
+				}]
+			}
+		}
+	},
+	"display": {
+		"icon": { "id": "minecraft:trial_key" },
+		"title": "自助服务",
+		"description": "合成附魔【我自己兑奖！】的试炼钥匙"
+	}
+}

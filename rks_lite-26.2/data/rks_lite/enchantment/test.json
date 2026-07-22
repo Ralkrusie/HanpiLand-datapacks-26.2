@@ -1,0 +1,72 @@
+{
+  "anvil_cost": 6,
+  "description": {
+    "translate": "请输入文本",
+    "color": "light_purple",
+    "extra": [
+      {
+        "translate": " 测试用魔咒",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 1,
+          "per_level_above_first": 0
+        },
+        "attribute": "minecraft:bounciness",
+        "id": "rks_lite:enchantment.test",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -1,
+          "per_level_above_first": 0
+        },
+        "attribute": "minecraft:friction_modifier",
+        "id": "rks_lite:enchantment.test",
+        "operation": "add_multiplied_total"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -1,
+          "per_level_above_first": 0
+        },
+        "attribute": "minecraft:air_drag_modifier",
+        "id": "rks_lite:enchantment.test",
+        "operation": "add_multiplied_total"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -1,
+          "per_level_above_first": 0
+        },
+        "attribute": "minecraft:fall_damage_multiplier",
+        "id": "rks_lite:enchantment.test",
+        "operation": "add_multiplied_total"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "armor"
+  ],
+  "supported_items": "#foot_armor",
+  "weight": 1
+}

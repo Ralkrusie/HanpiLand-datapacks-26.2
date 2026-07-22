@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:book",
+        "minecraft:golden_dandelion"
+    ],
+    "result": {
+        "id": "minecraft:enchanted_book",
+        "components": {
+            "minecraft:stored_enchantments": {
+                "rks_lite:cube_size_down": 1
+            }
+        },
+        "count": 1
+    }
+}

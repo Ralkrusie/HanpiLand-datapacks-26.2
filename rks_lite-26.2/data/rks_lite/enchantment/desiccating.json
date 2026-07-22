@@ -1,0 +1,53 @@
+{
+	"anvil_cost": 4,
+	"description": {
+		"translate": "干涸撕咬",
+		"color": "#C2A36C",
+		"extra": [
+			{
+				"translate": " 攻击附带缓慢效果",
+				"color": "gray",
+				"italic": true
+			}
+		]
+	},
+	"effects": {
+		"minecraft:post_attack": [
+			{
+				"enchanted": "attacker",
+				"affected": "victim",
+				"effect": {
+					"type": "minecraft:apply_mob_effect",
+					"to_apply": "minecraft:slowness",
+					"min_duration": 5.0,
+					"max_duration": 5.0,
+					"min_amplifier": {
+						"type": "minecraft:linear",
+						"base": 1,
+						"per_level_above_first": 2
+					},
+					"max_amplifier": {
+						"type": "minecraft:linear",
+						"base": 1,
+						"per_level_above_first": 2
+					}
+				}
+			}
+		]
+	},
+	"exclusive_set": "#rks_lite:exclusive_set/debuff",
+	"max_cost": {
+		"base": 20,
+		"per_level_above_first": 10
+	},
+	"max_level": 2,
+	"min_cost": {
+		"base": 10,
+		"per_level_above_first": 10
+	},
+	"slots": [
+		"mainhand"
+	],
+	"supported_items": "#rks_lite:enchantable/all_weapons",
+	"weight": 1
+}

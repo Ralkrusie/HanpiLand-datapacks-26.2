@@ -1,0 +1,63 @@
+{
+  "anvil_cost": 6,
+  "description": {
+    "translate": "活力",
+    "color": "#8CE08C",
+    "extra": [
+      {
+        "translate": " 提升移速",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.333,
+          "per_level_above_first": 0.333
+        },
+        "attribute": "minecraft:movement_speed",
+        "id": "rks_lite:enchantment.vibrant",
+        "operation": "add_multiplied_base"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.2,
+          "per_level_above_first": 0.2
+        },
+        "attribute": "minecraft:movement_efficiency",
+        "id": "rks_lite:enchantment.vibrant",
+        "operation": "add_value"
+      },
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.2,
+          "per_level_above_first": 0.2
+        },
+        "attribute": "minecraft:water_movement_efficiency",
+        "id": "rks_lite:enchantment.vibrant",
+        "operation": "add_value"
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "hand",
+    "legs"
+  ],
+  "supported_items": "#rks_lite:enchantable/totem_leg",
+  "weight": 1
+}

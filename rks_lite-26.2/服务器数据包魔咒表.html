@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rks_lite v4.0 附魔总览 (MC 26.2)</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,"Microsoft YaHei",sans-serif; background:#1a1a2e; color:#eee; padding:20px; }
+h1 { text-align:center; margin:20px 0; color:#e94560; font-size:1.8em; }
+.subtitle { text-align:center; color:#888; margin-bottom:10px; font-size:.9em; }
+.legend { display:flex; justify-content:center; gap:20px; margin:15px 0; flex-wrap:wrap; font-size:.85em; }
+.legend span { padding:2px 10px; border-radius:4px; }
+.leg-ok { background:#1a4a1a; color:#4f4; }
+.leg-no { background:#4a1a1a; color:#f44; }
+table { width:100%; border-collapse:collapse; margin:15px 0; font-size:.88em; }
+th { background:#16213e; color:#e94560; padding:10px 8px; text-align:left; position:sticky; top:0; z-index:2; }
+td { padding:8px; border-bottom:1px solid #333; vertical-align:top; }
+tr:hover { background:rgba(233,69,96,0.08); }
+tr.unobtainable { opacity:0.5; }
+tr.unobtainable:hover { opacity:0.75; }
+.id-cell { font-family:Consolas,monospace; color:#0af; white-space:nowrap; }
+.name-cell { color:#fff; font-weight:bold; white-space:nowrap; }
+.effect-cell { max-width:360px; font-size:.9em; }
+.obtain-cell { font-size:.82em; color:#aaa; }
+.lv { display:inline-block; background:#333; color:#ccc; padding:1px 6px; border-radius:3px; font-size:.85em; }
+.filter-bar { text-align:center; margin:15px 0; }
+.filter-bar input { padding:8px 16px; border-radius:20px; border:1px solid #444; background:#0f0f23; color:#eee; width:300px; font-size:.95em; }
+.filter-bar input:focus { outline:none; border-color:#e94560; }
+@media(max-width:768px){ body{padding:5px} table{font-size:.75em} th,td{padding:5px 3px} }
+</style>
+</head>
+<body>
+<h1>🗡️ rks_lite 附魔总览</h1>
+<p class="subtitle">Minecraft 26.2 · v4.0 · 41个附魔（26个可获取）</p>
+<div class="legend">
+  <span class="leg-ok">🟢 可获取 26 个</span>
+  <span class="leg-no">🔴 不可获取 15 个</span>
+</div>
+<div class="filter-bar">
+  <input type="text" id="filter" placeholder="🔍 搜索附魔名或ID..." oninput="filterTable()">
+</div>
+<table id="enchTable">
+<thead><tr>
+  <th>ID</th><th>中文名</th><th>最大等级</th><th>部位</th><th>适用物品</th><th>主要效果</th><th>获取途径</th>
+</tr></thead><tbody>
+<tr class="obtainable"><td class="id-cell">agility</td><td class="name-cell">敏捷</td><td><span class="lv">1</span></td><td>saddle, body</td><td style="font-size:.8em;color:#999">鞍、挽具</td><td class="effect-cell">移动速度 +100%~+100%/级；跳跃力 +100%~+100%/级；行走高度 +1~+1/级；水中移动效率 +0.1~+0.1/级；安全摔落距离 +5~+5/级；摔落伤害倍率 -0.2~-0.2/级；飞行速度 +100%~+100%/级</td><td class="obtain-cell">混沌废墟 · 不祥试炼金库</td></tr>
+<tr class="obtainable"><td class="id-cell">auto_reward</td><td class="name-cell">我自己兑奖！</td><td><span class="lv">1</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">纸</td><td class="effect-cell">左键任意方块兑换奖励</td><td class="obtain-cell">试炼钥匙合成</td></tr>
+<tr class="obtainable"><td class="id-cell">bounce</td><td class="name-cell">弹跳</td><td><span class="lv">3</span></td><td>feet</td><td style="font-size:.8em;color:#999">靴子</td><td class="effect-cell">弹力 +0.33~+0.33/级；摔落伤害倍率 -20%~-20%/级</td><td class="obtain-cell">村民 · 混沌废墟</td></tr>
+<tr class="obtainable"><td class="id-cell">contract</td><td class="name-cell">恶魔契约</td><td><span class="lv">1</span></td><td>armor</td><td style="font-size:.8em;color:#999">所有盔甲</td><td class="effect-cell">最大生命值 -4~-4/级；幸运 -0.5~-0.5/级；攻击伤害 +1.5~+1.5/级；攻击速度 +15%~+15%/级；方块交互距离 +0.2~+0.2/级；实体交互距离 +0.2~+0.2/级；移动速度 +10%~+10%/级</td><td class="obtain-cell">村民(宝藏) · 混沌废墟 · 远古城市</td></tr>
+<tr class="obtainable"><td class="id-cell">cube_size_down</td><td class="name-cell">生物变小</td><td><span class="lv">9</span></td><td>body</td><td style="font-size:.8em;color:#999">硫方怪可吞噬方块</td><td class="effect-cell">实体大小 -10%~-10%/级</td><td class="obtain-cell">书+金蒲公英合成(1~8级)</td></tr>
+<tr class="obtainable"><td class="id-cell">cube_size_up</td><td class="name-cell">生物变大</td><td><span class="lv">8</span></td><td>body</td><td style="font-size:.8em;color:#999">硫方怪可吞噬方块</td><td class="effect-cell">实体大小 +50%~+50%/级</td><td class="obtain-cell">书+粘液球合成(1~8级)</td></tr>
+<tr class="unobtainable"><td class="id-cell">curse</td><td class="name-cell">诅咒</td><td><span class="lv">4</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">攻击给目标中毒 (I级起,+1/级)10秒；攻击给目标凋零 (I级起,+1/级)10秒；攻击给目标寄生10秒；攻击点燃目标7秒</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">desiccating</td><td class="name-cell">干涸撕咬</td><td><span class="lv">2</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">攻击给目标缓慢 (I级起,+2/级)5秒</td><td class="obtain-cell">村民(宝藏) · 混沌废墟</td></tr>
+<tr class="unobtainable"><td class="id-cell">expunger</td><td class="name-cell">灭除之刃</td><td><span class="lv">5</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">攻击附加1+1/级额外伤害</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">fight_me</td><td class="name-cell">与我一战</td><td><span class="lv">2</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">攻击给目标力量5秒；攻击给自身力量 (I级起,+1/级)5秒</td><td class="obtain-cell">村民(宝藏) · 混沌废墟</td></tr>
+<tr class="unobtainable"><td class="id-cell">flash</td><td class="name-cell">大运</td><td><span class="lv">1</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">矛</td><td class="effect-cell">移动速度 +18；移动效率 +1；水中移动效率 +1</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">frost_cube</td><td class="name-cell">冰球</td><td><span class="lv">2</span></td><td>body</td><td style="font-size:.8em;color:#999">快速滑动型硫方怪可吞噬方块</td><td class="effect-cell">免疫火焰灼伤；行走生成冰霜(半径3+1/级)</td><td class="obtain-cell">附魔台 · 村民</td></tr>
+<tr class="obtainable"><td class="id-cell">grace</td><td class="name-cell">神圣恩典</td><td><span class="lv">1</span></td><td>armor</td><td style="font-size:.8em;color:#999">所有盔甲</td><td class="effect-cell">攻击伤害 -1~-1/级；最大生命值 +2~+2/级；盔甲韧性 +2~+2/级；摔落伤害倍率 -0.1~-0.1/级；燃烧时间 -0.1~-0.1/级；移动效率 +0.2~+0.2/级；水中移动效率 +0.2~+0.2/级；氧气加成 +0.2~+0.2/级；幸运 +0.5~+0.5/级</td><td class="obtain-cell">村民(宝藏) · 混沌废墟 · 远古城市</td></tr>
+<tr class="obtainable"><td class="id-cell">grass_walker</td><td class="name-cell">草径行者</td><td><span class="lv">2</span></td><td>feet</td><td style="font-size:.8em;color:#999">靴子</td><td class="effect-cell">免疫仙人掌/浆果丛；脚下泥土变为草方块(半径3+1/级)</td><td class="obtain-cell">村民(宝藏) · 混沌废墟 · 丛林神庙</td></tr>
+<tr class="obtainable"><td class="id-cell">grip</td><td class="name-cell">抓地</td><td><span class="lv">3</span></td><td>feet</td><td style="font-size:.8em;color:#999">靴子</td><td class="effect-cell">地面摩擦 +35%~+35%/级</td><td class="obtain-cell">村民 · 混沌废墟</td></tr>
+<tr class="obtainable"><td class="id-cell">hand_of_creation</td><td class="name-cell">创造之手</td><td><span class="lv">3</span></td><td>hand</td><td style="font-size:.8em;color:#999">不死图腾</td><td class="effect-cell">方块交互距离 +1~+1/级</td><td class="obtain-cell">混沌废墟</td></tr>
+<tr class="obtainable"><td class="id-cell">high_step</td><td class="name-cell">如履平地</td><td><span class="lv">1</span></td><td>legs, hand</td><td style="font-size:.8em;color:#999">不死图腾、护腿</td><td class="effect-cell">行走高度 +0.5；跳跃力 +0.2；安全摔落距离 +1</td><td class="obtain-cell">合成配方</td></tr>
+<tr class="unobtainable"><td class="id-cell">infinity_ultra</td><td class="name-cell">无限+</td><td><span class="lv">1</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">弓、弩</td><td class="effect-cell">所有弹药无限</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">isolation</td><td class="name-cell">虚无</td><td><span class="lv">1</span></td><td>hand, armor</td><td style="font-size:.8em;color:#999">不死图腾、所有盔甲</td><td class="effect-cell">路径点传输和接收距离-100%</td><td class="obtain-cell">合成配方</td></tr>
+<tr class="obtainable"><td class="id-cell">life</td><td class="name-cell">愈伤</td><td><span class="lv">1</span></td><td>hand, chest</td><td style="font-size:.8em;color:#999">不死图腾、胸甲</td><td class="effect-cell">生命恢复1</td><td class="obtain-cell">混沌废墟 · 合成配方</td></tr>
+<tr class="obtainable"><td class="id-cell">magma_dancer</td><td class="name-cell">熔岩行者</td><td><span class="lv">2</span></td><td>feet</td><td style="font-size:.8em;color:#999">靴子</td><td class="effect-cell">免疫火焰灼伤；行走生成岩浆块(半径2+1/级)；燃烧时间 -0.2~-0.2/级</td><td class="obtain-cell">村民(宝藏) · 混沌废墟 · 废弃传送门</td></tr>
+<tr class="unobtainable"><td class="id-cell">malaise</td><td class="name-cell">萎靡</td><td><span class="lv">4</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">攻击给目标缓慢 (I级起,+1/级)10秒；攻击给目标失明 (I级起,+1/级)10秒；攻击给目标黑暗效果 (I级起,+1/级)10秒；攻击给目标挖掘疲劳 (I级起,+1/级)10秒；攻击给目标反胃 (I级起,+1/级)10秒；攻击给目标unluck (I级起,+1/级)10秒；攻击给目标饥饿 (I级起,+1/级)10秒；攻击给目标虚弱 (I级起,+1/级)10秒</td><td class="obtain-cell">❌</td></tr>
+<tr class="unobtainable"><td class="id-cell">multishot_ultra</td><td class="name-cell">多重射击+</td><td><span class="lv">5</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">弩、弓</td><td class="effect-cell">发射更多弹药</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">saturation</td><td class="name-cell">滋养</td><td><span class="lv">1</span></td><td>hand, head</td><td style="font-size:.8em;color:#999">不死图腾、头盔/生物头颅/南瓜</td><td class="effect-cell">每40秒获得1秒饱和</td><td class="obtain-cell">混沌废墟 · 合成配方</td></tr>
+<tr class="unobtainable"><td class="id-cell">scale_down</td><td class="name-cell">变小</td><td><span class="lv">99</span></td><td>armor</td><td style="font-size:.8em;color:#999">所有盔甲</td><td class="effect-cell">实体大小 -1%~-1%/级；视角距离 +40%~+20%/级；行走高度 -1%~-0%/级；移动速度 -0%~-0%/级</td><td class="obtain-cell">❌</td></tr>
+<tr class="unobtainable"><td class="id-cell">scale_up</td><td class="name-cell">变大</td><td><span class="lv">99</span></td><td>armor</td><td style="font-size:.8em;color:#999">所有盔甲</td><td class="effect-cell">实体大小 +100%~+100%/级；方块交互距离 +0.5~+0.2/级；实体交互距离 +0.5~+0.2/级；行走高度 +100%~+100%/级；跳跃力 +10%~+5%/级；移动速度 +10%~+5%/级；最大生命值 +40%~+20%/级</td><td class="obtain-cell">❌</td></tr>
+<tr class="unobtainable"><td class="id-cell">shadow_mantle</td><td class="name-cell">暗影庇护</td><td><span class="lv">1</span></td><td>chest</td><td style="font-size:.8em;color:#999">不死图腾、胸甲</td><td class="effect-cell">免疫音波伤害</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">shared_fate</td><td class="name-cell">命运同担</td><td><span class="lv">2</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">攻击给目标虚弱 (I级起,+1/级)5秒；攻击给自身虚弱5秒</td><td class="obtain-cell">村民(宝藏) · 混沌废墟</td></tr>
+<tr class="unobtainable"><td class="id-cell">silence</td><td class="name-cell">幽静</td><td><span class="lv">1</span></td><td>any</td><td style="font-size:.8em;color:#999">紫水晶碎片</td><td class="effect-cell">完全隐身</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">skate</td><td class="name-cell">滑溜</td><td><span class="lv">3</span></td><td>feet</td><td style="font-size:.8em;color:#999">靴子</td><td class="effect-cell">地面摩擦 -33.33%~-33.33%/级</td><td class="obtain-cell">村民 · 混沌废墟</td></tr>
+<tr class="unobtainable"><td class="id-cell">sky_walker</td><td class="name-cell">天行者</td><td><span class="lv">1</span></td><td>feet</td><td style="font-size:.8em;color:#999">靴子</td><td class="effect-cell">脚下空气替换为红树树叶</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">snake_bite</td><td class="name-cell">蛇咬</td><td><span class="lv">2</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">攻击给目标中毒 (I级起,+2/级)7秒</td><td class="obtain-cell">附魔台 · 村民 · 混沌废墟 · 丛林神庙</td></tr>
+<tr class="unobtainable"><td class="id-cell">snake_bited</td><td class="name-cell">被蛇咬</td><td><span class="lv">1</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">攻击给自身中毒 (I级起,+2/级)7秒</td><td class="obtain-cell">❌</td></tr>
+<tr class="unobtainable"><td class="id-cell">snake_treasure</td><td class="name-cell">藏蛇图</td><td><span class="lv">1</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">？？？</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">streamlined</td><td class="name-cell">破风</td><td><span class="lv">3</span></td><td>chest</td><td style="font-size:.8em;color:#999">胸甲</td><td class="effect-cell">空气阻力 -25%~-25%/级</td><td class="obtain-cell">村民 · 混沌废墟</td></tr>
+<tr class="obtainable"><td class="id-cell">sturdy</td><td class="name-cell">坚韧</td><td><span class="lv">4</span></td><td>body</td><td style="font-size:.8em;color:#999">坐骑铠（马铠、狼铠、鹦鹉螺铠）</td><td class="effect-cell">EPF +4~+4/级；盔甲韧性 +2~+1/级</td><td class="obtain-cell">村民(宝藏) · 混沌废墟</td></tr>
+<tr class="obtainable"><td class="id-cell">taiko</td><td class="name-cell">太空漫游者</td><td><span class="lv">3</span></td><td>feet</td><td style="font-size:.8em;color:#999">靴子</td><td class="effect-cell">重力 -0.02~-0.032/级；摔落伤害倍率 -0.5~-0.2/级；跳跃力度 +0.2</td><td class="obtain-cell">村民(宝藏) · 混沌废墟 · 末地城</td></tr>
+<tr class="unobtainable"><td class="id-cell">test</td><td class="name-cell">请输入文本</td><td><span class="lv">1</span></td><td>armor</td><td style="font-size:.8em;color:#999">靴子</td><td class="effect-cell">弹力 +1；地面摩擦 -100%；空气阻力 -100%；摔落伤害倍率 -100%</td><td class="obtain-cell">❌</td></tr>
+<tr class="unobtainable"><td class="id-cell">veteran</td><td class="name-cell">老资历打法</td><td><span class="lv">8</span></td><td>mainhand</td><td style="font-size:.8em;color:#999">所有武器（剑、斧、矛、重锤）</td><td class="effect-cell">攻击附加1+1/级额外伤害；攻击速度 +100；攻击伤害 -100%</td><td class="obtain-cell">❌</td></tr>
+<tr class="obtainable"><td class="id-cell">vibrant</td><td class="name-cell">活力</td><td><span class="lv">1</span></td><td>hand, legs</td><td style="font-size:.8em;color:#999">不死图腾、护腿</td><td class="effect-cell">移动速度 +33%~+33%/级；移动效率 +0.2~+0.2/级；水中移动效率 +0.2~+0.2/级</td><td class="obtain-cell">混沌废墟 · 合成配方</td></tr>
+<tr class="obtainable"><td class="id-cell">warding</td><td class="name-cell">护佑</td><td><span class="lv">1</span></td><td>hand</td><td style="font-size:.8em;color:#999">不死图腾、盾牌</td><td class="effect-cell">抗性提升1</td><td class="obtain-cell">混沌废墟 · 杀死监守者掉落 · 合成配方</td></tr>
+</tbody></table>
+<script>function filterTable(){const q=document.getElementById("filter").value.toLowerCase();document.querySelectorAll("#enchTable tbody tr").forEach(r=>{r.style.display=r.textContent.toLowerCase().includes(q)?"":"none";});}</script>
+</body></html>

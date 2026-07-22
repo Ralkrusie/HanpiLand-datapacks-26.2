@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        "minecraft:blue_ice"
+    ],
+    "result": {
+        "id": "minecraft:blue_ice",
+        "count": 1,
+        "components": {
+            "custom_name": {
+                "translate": "可附魔蓝冰",
+                "italic": false
+            },
+            "enchantable": {"value": 1}
+        }
+    }
+}

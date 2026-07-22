@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 127.55,
+    "comparator_output": 2,
+    "description": "Toby Fox - My Castle Town",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch2_my_castle_town"
+    }
+}

@@ -1,0 +1,571 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_a_town_called_hometown",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_another_him",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_april_2012",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_basement",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_before_the_story",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_beginning",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_card_castle",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_chaos_king",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_checker_dance",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_cliffs",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_darkness_falls",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_dont_forget",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_empty_town",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_fanfare_from_rose_of_winter",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_field_of_hopes_and_dreams",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_friendship",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_gallery",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_hip_shop",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_im_very_bad",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_imminent_death",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_lancer",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_lantern",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_quiet_autumn",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_rouxls_kaard",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_rude_buster",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_scarlet_forest",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_school",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_susie",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_the_chase",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_the_circus",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_the_door",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_the_holy",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_the_legend",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_the_world_revolving",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_thrash_machine",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_vs_lancer",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_vs_susie",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_weird_birds",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_you_can_always_come_home",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      },
+      {
+        "type": "minecraft:item",
+        "name": "minecraft:music_disc_chirp",
+        "weight": 1,
+        "functions": [
+          {
+            "function": "minecraft:set_components",
+            "components": {
+              "minecraft:jukebox_playable": "rks_dr_disc:ch1_your_power",
+              "minecraft:max_stack_size": 16, "minecraft:rarity": "uncommon"
+            }
+          }
+        ]
+      }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

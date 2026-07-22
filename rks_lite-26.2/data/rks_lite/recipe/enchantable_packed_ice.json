@@ -1,0 +1,17 @@
+{
+    "type": "crafting_shapeless",
+    "ingredients": [
+        "minecraft:packed_ice"
+    ],
+    "result": {
+        "id": "minecraft:packed_ice",
+        "count": 1,
+        "components": {
+            "custom_name": {
+                "translate": "可附魔浮冰",
+                "italic": false
+            },
+            "enchantable": {"value": 1}
+        }
+    }
+}

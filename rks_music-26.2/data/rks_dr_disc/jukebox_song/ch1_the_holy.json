@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 48,
+    "comparator_output": 1,
+    "description": "Toby Fox - THE HOLY",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch1_the_holy"
+    }
+}

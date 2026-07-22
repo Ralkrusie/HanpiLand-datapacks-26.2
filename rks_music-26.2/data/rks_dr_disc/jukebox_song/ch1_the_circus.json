@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 51.43,
+    "comparator_output": 1,
+    "description": "Toby Fox - The Circus",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch1_the_circus"
+    }
+}

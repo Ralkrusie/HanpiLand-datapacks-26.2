@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 32.84,
+    "comparator_output": 3,
+    "description": "Toby Fox - MIKE, the BOARD, please!",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_dr_disc:ch3_mike_the_board_please"
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "anvil_cost": 0,
+  "description": {
+    "translate": "生物变小",
+    "color": "light_purple",
+    "extra": [
+      {
+        "translate": " 减小硫方怪的体型",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+        {
+            "amount": {
+            "type": "minecraft:linear",
+            "base": -0.1,
+            "per_level_above_first": -0.1
+            },
+            "attribute": "minecraft:scale",
+            "id": "rks_lite:enchantment.scale_up",
+            "operation": "add_multiplied_base"
+        }
+    ]
+  },
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_level": 9,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "slots": [
+    "body"
+  ],
+  "supported_items": "#minecraft:sulfur_cube_swallowable",
+  "weight": 1
+}

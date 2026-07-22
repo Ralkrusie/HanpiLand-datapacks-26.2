@@ -1,0 +1,43 @@
+{
+  "anvil_cost": 3,
+  "description": {
+    "translate": "抓地",
+    "color": "#8b4513",
+    "extra": [
+      {
+        "translate": " 增加地面摩擦力",
+        "color": "gray",
+        "italic": true
+      }
+    ]
+  },
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.35,
+          "per_level_above_first": 0.35
+        },
+        "attribute": "minecraft:friction_modifier",
+        "id": "rks_lite:enchantment.grip",
+        "operation": "add_multiplied_total"
+      }
+    ]
+  },
+  "exclusive_set": "#rks_lite:exclusive_set/boots_friction",
+  "max_cost": {
+    "base": 20,
+    "per_level_above_first": 10
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#foot_armor",
+  "weight": 2
+}
