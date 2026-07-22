@@ -1,7 +1,10 @@
 {
   "pack": {
-    "description": "Deltarune唱片数据包 by Ralkrusie",
-    "min_format": [101, 1],
-    "max_format": [101, 1]
+    "description": "杂项音乐唱片数据包 by Ralkrusie",
+    "min_format": [
+      48,
+      0
+    ],
+    "max_format": 2147483647
   }
 }

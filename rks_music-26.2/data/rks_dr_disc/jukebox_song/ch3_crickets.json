@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 36.92,
-    "comparator_output": 3,
-    "description": "Toby Fox - Crickets",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch3_crickets"
-    }
-}

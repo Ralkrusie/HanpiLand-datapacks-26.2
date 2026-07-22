@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 161.28,
+    "comparator_output": 1,
+    "description": "Toby Fox - Field of Hopes and Dreams",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:field_of_hopes_and_dreams"
+    }
+}

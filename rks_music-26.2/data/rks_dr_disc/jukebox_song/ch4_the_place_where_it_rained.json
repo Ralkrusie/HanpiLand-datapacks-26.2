@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 172.73,
-    "comparator_output": 4,
-    "description": "Toby Fox - The place where it rained",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch4_the_place_where_it_rained"
-    }
-}

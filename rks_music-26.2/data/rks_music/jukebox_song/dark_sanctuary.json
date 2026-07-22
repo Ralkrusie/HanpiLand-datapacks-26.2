@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 106.11,
+    "comparator_output": 1,
+    "description": "Toby Fox - Dark Sanctuary",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:dark_sanctuary"
+    }
+}

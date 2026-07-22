@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 120,
-    "comparator_output": 2,
-    "description": "Toby Fox & Lena Raine & Marcy Nabors - Attack of the Killer Queen",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch2_attack_of_the_killer_queen"
-    }
-}

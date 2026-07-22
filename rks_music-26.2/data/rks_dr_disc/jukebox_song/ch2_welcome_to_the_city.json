@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 114,
-    "comparator_output": 2,
-    "description": "Toby Fox - WELCOME TO THE CITY",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch2_welcome_to_the_city"
-    }
-}

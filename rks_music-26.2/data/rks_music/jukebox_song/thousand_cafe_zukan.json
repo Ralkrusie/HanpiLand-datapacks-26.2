@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 89.33,
+    "comparator_output": 1,
+    "description": "Toby Fox - Thousand Cafe Zukan",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:thousand_cafe_zukan"
+    }
+}

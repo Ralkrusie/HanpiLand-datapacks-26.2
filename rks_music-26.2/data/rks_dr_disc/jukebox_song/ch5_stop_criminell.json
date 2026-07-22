@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 45.18,
-    "comparator_output": 5,
-    "description": "Toby Fox - Stop, Criminell!",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch5_stop_criminell"
-    }
-}

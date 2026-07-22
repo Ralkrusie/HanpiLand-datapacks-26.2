@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 116,
+    "comparator_output": 1,
+    "description": "Plants vs. Zombies - Puzzle Mode",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:pvz_puzzle"
+    }
+}

@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 100.8,
-    "comparator_output": 1,
-    "description": "Toby Fox - You Can Always Come Home",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch1_you_can_always_come_home"
-    }
-}

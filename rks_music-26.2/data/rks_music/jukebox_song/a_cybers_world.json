@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 166.15,
+    "comparator_output": 1,
+    "description": "Toby Fox - A CYBER'S WORLD?",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:a_cybers_world"
+    }
+}

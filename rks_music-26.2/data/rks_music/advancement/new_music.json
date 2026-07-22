@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:music_disc_otherside",
+      "components": {
+        "minecraft:jukebox_playable": "rks_music:old_wooden_rafters"
+      }
+    },
+    "title": "新的音乐",
+    "description": "这里有更多的音乐唱片",
+    "background": "minecraft:textures/block/jukebox_top.png",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "join": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "rewards": {
+    "function": "rks_music:grant_new_music"
+  }
+}

@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 40.42,
-    "comparator_output": 5,
-    "description": "Toby Fox - I'm Telling!",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch5_im_telling"
-    }
-}

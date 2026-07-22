@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 96.0,
-    "comparator_output": 5,
-    "description": "Toby Fox - Sunset of Seven Suns",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch5_sunset_of_seven_suns"
-    }
-}

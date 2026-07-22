@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 19.01,
-    "comparator_output": 1,
-    "description": "Toby Fox - Rouxls Kaard",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch1_rouxls_kaard"
-    }
-}

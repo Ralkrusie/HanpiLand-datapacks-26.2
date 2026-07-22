@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 67.27,
+    "comparator_output": 1,
+    "description": "Toby Fox - NOW'S YOUR CHANCE TO BE A",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:nows_your_chance_to_be_a"
+    }
+}

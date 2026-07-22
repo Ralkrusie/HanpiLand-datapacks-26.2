@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 133.34,
-    "comparator_output": 4,
-    "description": "Toby Fox - Hammer of Justice",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch4_hammer_of_justice"
-    }
-}

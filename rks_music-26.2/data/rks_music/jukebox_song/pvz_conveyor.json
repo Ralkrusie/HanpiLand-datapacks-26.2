@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 130,
+    "comparator_output": 1,
+    "description": "Plants vs. Zombies - Conveyor Belt",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:pvz_conveyor"
+    }
+}

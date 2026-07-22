@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 109,
+    "comparator_output": 1,
+    "description": "Plants vs. Zombies - Choose Your Seeds",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:pvz_choose_your_seeds"
+    }
+}

@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 90.38,
-    "comparator_output": 3,
-    "description": "Toby Fox - Welcome to the Green Room",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch3_welcome_to_the_green_room"
-    }
-}

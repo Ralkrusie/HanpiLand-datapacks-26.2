@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 142.29,
-    "comparator_output": 2,
-    "description": "Toby Fox - BIG SHOT",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch2_big_shot"
-    }
-}

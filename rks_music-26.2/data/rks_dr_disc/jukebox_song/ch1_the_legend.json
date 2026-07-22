@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 111.27,
-    "comparator_output": 1,
-    "description": "Toby Fox - The Legend",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch1_the_legend"
-    }
-}

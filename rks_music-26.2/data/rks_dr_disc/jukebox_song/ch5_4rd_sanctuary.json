@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 79.2,
-    "comparator_output": 5,
-    "description": "Toby Fox - 4rd Sanctuary",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch5_4rd_sanctuary"
-    }
-}

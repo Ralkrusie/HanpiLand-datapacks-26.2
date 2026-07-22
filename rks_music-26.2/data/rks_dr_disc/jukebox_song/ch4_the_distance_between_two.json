@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 42.67,
-    "comparator_output": 4,
-    "description": "Toby Fox - The distance between two",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch4_the_distance_between_two"
-    }
-}

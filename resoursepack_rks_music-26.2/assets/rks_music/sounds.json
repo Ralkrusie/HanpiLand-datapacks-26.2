@@ -1,0 +1,399 @@
+{
+    "a_cybers_world": {
+        "sounds": [
+            {
+                "name": "rks_music:records/a_cybers_world",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "big_shot": {
+        "sounds": [
+            {
+                "name": "rks_music:records/big_shot",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "chunriying": {
+        "sounds": [
+            {
+                "name": "rks_music:records/chunriying",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "cs2_main_menu": {
+        "sounds": [
+            {
+                "name": "rks_music:records/cs2_main_menu",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "dark_sanctuary": {
+        "sounds": [
+            {
+                "name": "rks_music:records/dark_sanctuary",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "field_of_hopes_and_dreams": {
+        "sounds": [
+            {
+                "name": "rks_music:records/field_of_hopes_and_dreams",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "hammer_of_justice": {
+        "sounds": [
+            {
+                "name": "rks_music:records/hammer_of_justice",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "hey_every": {
+        "sounds": [
+            {
+                "name": "rks_music:records/hey_every",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "mike_the_board_please": {
+        "sounds": [
+            {
+                "name": "rks_music:records/mike_the_board_please",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "million_dollar_baby": {
+        "sounds": [
+            {
+                "name": "rks_music:records/million_dollar_baby",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "my_castle_town": {
+        "sounds": [
+            {
+                "name": "rks_music:records/my_castle_town",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "nows_your_chance_to_be_a": {
+        "sounds": [
+            {
+                "name": "rks_music:records/nows_your_chance_to_be_a",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "old_wooden_rafters": {
+        "sounds": [
+            {
+                "name": "rks_music:records/old_wooden_rafters",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "ruder_buster": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ruder_buster",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "the_world_revolving": {
+        "sounds": [
+            {
+                "name": "rks_music:records/the_world_revolving",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "tv_world": {
+        "sounds": [
+            {
+                "name": "rks_music:records/tv_world",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_boss": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_boss",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_choose_your_seeds": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_choose_your_seeds",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_conveyor": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_conveyor",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_day": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_day",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_disco_zombie": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_disco_zombie",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_fog": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_fog",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_minigames": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_minigames",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_night": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_night",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_pool": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_pool",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_puzzle": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_puzzle",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_roof": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_roof",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_title": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_title",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_zen_garden": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_zen_garden",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pvz_zombies_on_your_lawn": {
+        "sounds": [
+            {
+                "name": "rks_music:records/pvz_zombies_on_your_lawn",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "cosmic_indifference": {
+        "sounds": [
+            {
+                "name": "rks_music:records/cosmic_indifference",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "cutie_mew_mew_magic": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_cutie_mew_mew_magic",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "festival": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_festival",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "flower_castle": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_flower_castle",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "flower_man": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_flower_man",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "garden_of_hopes_and_dreams": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_garden_of_hopes_and_dreams",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "i_guess_im_in_love": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_i_guess_im_in_love",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "petal_dance": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_petal_dance",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "pink": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_pink",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "running_sky": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_running_sky",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "sunset_of_seven_suns": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_sunset_of_seven_suns",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "thousand_cafe_zukan": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_thousand_cafe_zukan",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "who_might_you_be": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_who_might_you_be",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "your_dads_best_friend": {
+        "sounds": [
+            {
+                "name": "rks_music:records/ch5_your_dads_best_friend",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    }
+}
+

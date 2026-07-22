@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 70,
+    "comparator_output": 1,
+    "description": "Plants vs. Zombies - Zen Garden",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:pvz_zen_garden"
+    }
+}

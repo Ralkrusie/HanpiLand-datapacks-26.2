@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 184.67,
+    "comparator_output": 1,
+    "description": "Toby Fox - Cutie Mew Mew Magic",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:cutie_mew_mew_magic"
+    }
+}

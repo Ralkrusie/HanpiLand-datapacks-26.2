@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 169.04,
-    "comparator_output": 4,
-    "description": "Toby Fox - Crumbling Tower",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch4_crumbling_tower"
-    }
-}

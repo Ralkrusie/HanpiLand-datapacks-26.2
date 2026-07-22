@@ -3,33 +3,13 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:killed_by_player"
-        }
-      ],
+      "conditions": [{ "condition": "minecraft:killed_by_player" }],
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
-            {
-              "add": false,
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "function": "minecraft:set_count"
-            },
-            {
-              "count": {
-                "type": "minecraft:uniform",
-                "max": 1.0,
-                "min": 0.0
-              },
-              "enchantment": "minecraft:looting",
-              "function": "minecraft:enchanted_count_increase"
-            }
+            { "add": false, "count": { "type": "minecraft:uniform", "max": 1.0, "min": 0.0 }, "function": "minecraft:set_count" },
+            { "count": { "type": "minecraft:uniform", "max": 1.0, "min": 0.0 }, "enchantment": "minecraft:looting", "function": "minecraft:enchanted_count_increase" }
           ],
           "name": "minecraft:blaze_rod"
         }
@@ -39,20 +19,10 @@
     {
       "bonus_rolls": 0.0,
       "conditions": [
-        {
-          "condition": "minecraft:killed_by_player"
-        },
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.25
-        }
+        { "condition": "minecraft:killed_by_player" },
+        { "condition": "minecraft:random_chance", "chance": 0.1 }
       ],
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "value": "rks_dr_disc:patches/ch5_discs"
-        }
-      ],
+      "entries": [{ "type": "minecraft:loot_table", "value": "rks_music:patches/all_discs" }],
       "rolls": 1.0
     }
   ],

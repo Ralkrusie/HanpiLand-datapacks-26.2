@@ -1,9 +1,0 @@
-{
-    "length_in_seconds": 7.95,
-    "comparator_output": 3,
-    "description": "Toby Fox - Dig! Dig! To The Center of the Earth!",
-    "sound_event": {
-        "range": 64,
-        "sound_id": "rks_dr_disc:ch3_dig_dig_to_the_center_of_the_earth"
-    }
-}
