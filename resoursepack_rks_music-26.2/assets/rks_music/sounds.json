@@ -281,7 +281,7 @@
     "cutie_mew_mew_magic": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_cutie_mew_mew_magic",
+                "name": "rks_music:records/cutie_mew_mew_magic",
                 "stream": true,
                 "volume": 1.0
             }
@@ -290,7 +290,7 @@
     "festival": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_festival",
+                "name": "rks_music:records/festival",
                 "stream": true,
                 "volume": 1.0
             }
@@ -299,7 +299,7 @@
     "flower_castle": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_flower_castle",
+                "name": "rks_music:records/flower_castle",
                 "stream": true,
                 "volume": 1.0
             }
@@ -308,7 +308,7 @@
     "flower_man": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_flower_man",
+                "name": "rks_music:records/flower_man",
                 "stream": true,
                 "volume": 1.0
             }
@@ -317,7 +317,7 @@
     "garden_of_hopes_and_dreams": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_garden_of_hopes_and_dreams",
+                "name": "rks_music:records/garden_of_hopes_and_dreams",
                 "stream": true,
                 "volume": 1.0
             }
@@ -326,7 +326,7 @@
     "i_guess_im_in_love": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_i_guess_im_in_love",
+                "name": "rks_music:records/i_guess_im_in_love",
                 "stream": true,
                 "volume": 1.0
             }
@@ -335,7 +335,7 @@
     "petal_dance": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_petal_dance",
+                "name": "rks_music:records/petal_dance",
                 "stream": true,
                 "volume": 1.0
             }
@@ -344,7 +344,7 @@
     "pink": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_pink",
+                "name": "rks_music:records/pink",
                 "stream": true,
                 "volume": 1.0
             }
@@ -353,7 +353,7 @@
     "running_sky": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_running_sky",
+                "name": "rks_music:records/running_sky",
                 "stream": true,
                 "volume": 1.0
             }
@@ -362,7 +362,7 @@
     "sunset_of_seven_suns": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_sunset_of_seven_suns",
+                "name": "rks_music:records/sunset_of_seven_suns",
                 "stream": true,
                 "volume": 1.0
             }
@@ -371,7 +371,7 @@
     "thousand_cafe_zukan": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_thousand_cafe_zukan",
+                "name": "rks_music:records/thousand_cafe_zukan",
                 "stream": true,
                 "volume": 1.0
             }
@@ -380,7 +380,7 @@
     "who_might_you_be": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_who_might_you_be",
+                "name": "rks_music:records/who_might_you_be",
                 "stream": true,
                 "volume": 1.0
             }
@@ -389,7 +389,106 @@
     "your_dads_best_friend": {
         "sounds": [
             {
-                "name": "rks_music:records/ch5_your_dads_best_friend",
+                "name": "rks_music:records/your_dads_best_friend",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "field_of_hopes_and_dreams_credits_version": {
+        "sounds": [
+            {
+                "name": "rks_music:records/field_of_hopes_and_dreams_credits_version",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "aemeath": {
+        "sounds": [
+            {
+                "name": "rks_music:records/aemeath",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "answer": {
+        "sounds": [
+            {
+                "name": "rks_music:records/answer",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "assumptions": {
+        "sounds": [
+            {
+                "name": "rks_music:records/assumptions",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "cartethyia": {
+        "sounds": [
+            {
+                "name": "rks_music:records/cartethyia",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "chisa": {
+        "sounds": [
+            {
+                "name": "rks_music:records/chisa",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "denia": {
+        "sounds": [
+            {
+                "name": "rks_music:records/denia",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "internet_overdose": {
+        "sounds": [
+            {
+                "name": "rks_music:records/internet_overdose",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "killkiss": {
+        "sounds": [
+            {
+                "name": "rks_music:records/killkiss",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "mayoiuta": {
+        "sounds": [
+            {
+                "name": "rks_music:records/mayoiuta",
+                "stream": true,
+                "volume": 1.0
+            }
+        ]
+    },
+    "needolin": {
+        "sounds": [
+            {
+                "name": "rks_music:records/needolin",
                 "stream": true,
                 "volume": 1.0
             }

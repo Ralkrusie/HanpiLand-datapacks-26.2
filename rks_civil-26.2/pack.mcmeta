@@ -1,0 +1,7 @@
+{
+    "pack": {
+        "description": "rks_civil-生活质量数据包(v1.0)",
+        "min_format": [101, 1],
+        "max_format": [101, 1]
+    }
+}

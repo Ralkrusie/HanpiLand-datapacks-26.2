@@ -8,7 +8,7 @@
     },
     "title": "新的音乐",
     "description": "这里有更多的音乐唱片",
-    "background": "minecraft:textures/block/jukebox_top.png",
+    "background": "minecraft:block/pink_wool",
     "show_toast": true,
     "announce_to_chat": true
   },

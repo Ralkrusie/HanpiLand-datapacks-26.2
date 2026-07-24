@@ -52,3 +52,17 @@ item replace block ~1 ~1 ~ container.13 with minecraft:music_disc_13[minecraft:j
 item replace block ~1 ~1 ~ container.14 with minecraft:music_disc_13[minecraft:jukebox_playable="rks_music:thousand_cafe_zukan",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
 item replace block ~1 ~1 ~ container.15 with minecraft:music_disc_13[minecraft:jukebox_playable="rks_music:who_might_you_be",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
 item replace block ~1 ~1 ~ container.16 with minecraft:music_disc_13[minecraft:jukebox_playable="rks_music:your_dads_best_friend",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.17 with minecraft:music_disc_13[minecraft:jukebox_playable="rks_music:field_of_hopes_and_dreams_credits_version",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.18 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:aemeath",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.19 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:answer",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.20 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:assumptions",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.21 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:cartethyia",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.22 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:chisa",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.23 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:denia",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.24 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:internet_overdose",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.25 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:killkiss",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+item replace block ~1 ~1 ~ container.26 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:mayoiuta",minecraft:max_stack_size=16,minecraft:rarity=uncommon]
+
+# 木桶 3: 新加唱片 (1 disc) - music_disc_chirp
+setblock ~1 ~2 ~ barrel[facing=up]
+item replace block ~1 ~2 ~ container.0 with minecraft:music_disc_chirp[minecraft:jukebox_playable="rks_music:needolin",minecraft:max_stack_size=16,minecraft:rarity=uncommon]

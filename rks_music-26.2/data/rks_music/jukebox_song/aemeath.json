@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 226,
+    "comparator_output": 1,
+    "description": "鸣潮先约电台 - 远航星的告别",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:aemeath"
+    }
+}

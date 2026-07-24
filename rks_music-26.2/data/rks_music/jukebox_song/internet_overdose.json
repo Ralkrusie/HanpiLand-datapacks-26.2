@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 221,
+    "comparator_output": 1,
+    "description": "主播女孩重度依赖 - INTERNET OVERDOSE",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:internet_overdose"
+    }
+}

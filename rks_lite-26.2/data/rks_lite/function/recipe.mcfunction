@@ -25,4 +25,5 @@ recipe give @a rks_lite:cube_size_up_5
 recipe give @a rks_lite:cube_size_up_6
 recipe give @a rks_lite:cube_size_up_7
 recipe give @a rks_lite:cube_size_up_8
-
+recipe give @a rks_lite:cinnaber
+recipe give @a rks_lite:sulfur_cube_bucket

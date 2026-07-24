@@ -1,0 +1,14 @@
+{"type": "minecraft:crafting_shaped",
+   "category": "building",
+   "pattern": [
+     "SSS",
+     "SRS",
+     "SSS"
+   ],
+   "key": {
+    "S":"sulfur",
+    "R":"redstone"
+   },"result":{"id":"cinnabar",
+     "count": 8
+     }
+ }

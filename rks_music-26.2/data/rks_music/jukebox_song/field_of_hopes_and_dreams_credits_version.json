@@ -1,0 +1,9 @@
+{
+    "length_in_seconds": 101,
+    "comparator_output": 1,
+    "description": "Field of Hopes and Dreams (Credits Version)",
+    "sound_event": {
+        "range": 64,
+        "sound_id": "rks_music:field_of_hopes_and_dreams_credits_version"
+    }
+}

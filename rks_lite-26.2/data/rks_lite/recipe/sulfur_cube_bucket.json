@@ -1,0 +1,10 @@
+{"type": "minecraft:crafting_shapeless",
+   "category": "equipment",
+   "ingredients":[
+     "minecraft:slime_block",
+     "minecraft:honey_block",
+     "minecraft:totem_of_undying",
+     "minecraft:bucket"],
+     "result":{"id":"sulfur_cube_bucket"
+     }
+}
