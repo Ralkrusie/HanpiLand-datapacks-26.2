@@ -1,0 +1,5 @@
+tellraw @s [{text:"\n===== 💣 TNT 管控 =====\n",color:"gold",bold:true}]
+tellraw @s [{text:"全局计时器: ",color:"gray"},{score:{name:"#Global",objective:"tnt_timer"},color:"yellow"},{text:" / 1200 tick",color:"gray"}]
+tellraw @s [{text:"已受限制玩家: ",color:"gray"},{selector:"@a[scores={tnt_restrained=1}]",color:"red",separator:{text:", ",color:"gray"}}]
+tellraw @s [{text:"\n  [🔄 手动全局重置]  ",color:"aqua",click_event:{action:"run_command",command:"function rks_extra:tnt_off"}}]
+tellraw @s [{text:"  [↩ 返回]  ",color:"gold",click_event:{action:"run_command",command:"function rks_extra:admin_panel/open"}}]

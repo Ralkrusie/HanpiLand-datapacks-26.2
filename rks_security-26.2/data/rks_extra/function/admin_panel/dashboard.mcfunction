@@ -1,0 +1,6 @@
+tellraw @s [{text:"\n===== 📊 系统状态 =====\n",color:"gold",bold:true}]
+tellraw @s [{text:"在线管理员: ",color:"gray"},{selector:"@a[tag=player]",color:"green",separator:{text:", ",color:"gray"}}]
+tellraw @s [{text:"OP 嫌疑人计数: ",color:"gray"},{score:{name:"#suspicious",objective:"s_sus_op"},color:"red"},{"text":"  在线: ",color:"gray"},{selector:"@a[scores={s_sus_op=1}]",color:"red",separator:{text:", ",color:"gray"}}]
+tellraw @s [{text:"爆炸嫌疑人计数: ",color:"gray"},{score:{name:"#suspicious",objective:"s_sus_exp"},color:"red"},{"text":"  在线: ",color:"gray"},{selector:"@a[scores={s_sus_exp=1}]",color:"red",separator:{text:", ",color:"gray"}}]
+tellraw @s [{text:"TNT 计时器: ",color:"gray"},{score:{name:"#Global",objective:"tnt_timer"},color:"yellow"},{text:" / 1200 tick（重置倒计时）",color:"gray"}]
+tellraw @s [{text:"\n  [🔄 刷新]  ",color:"aqua",click_event:{action:"run_command",command:"function rks_extra:admin_panel/dashboard"}},{text:"  ",color:"white"},{text:"[↩ 返回]  ",color:"gold",click_event:{action:"run_command",command:"function rks_extra:admin_panel/open"}}]

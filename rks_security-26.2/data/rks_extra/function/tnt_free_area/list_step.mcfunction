@@ -19,6 +19,8 @@ execute store result storage rks_extra:storage tnt_free._show.ez int 1 run score
 # 4. 合并序号和原始区域数据到 _show
 $data modify storage rks_extra:storage tnt_free._show.idx set value $(i)
 $data modify storage rks_extra:storage tnt_free._show merge from storage rks_extra:storage tnt_free.areas[$(i)]
+# 4.5. 兼容旧数据：如无 name 字段则设为"未命名"
+execute unless data storage rks_extra:storage tnt_free._show.name run data modify storage rks_extra:storage tnt_free._show.name set value "未命名"
 # 5. 展示
 function rks_extra:tnt_free_area/list_show with storage rks_extra:storage tnt_free._show
 # 6. 索引+1 并递归

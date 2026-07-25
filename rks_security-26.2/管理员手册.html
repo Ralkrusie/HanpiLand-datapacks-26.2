@@ -1,800 +1,1176 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>rks_extra 管理员使用手册 v1.2</title>
-<style>
-  :root {
-    --bg: #1a1a2e; --card: #16213e; --gold: #f0c040;
-    --text: #ccc; --text-dim: #999; --border: #2a2a4a;
-    --red: #e94560; --green: #4ecca3; --blue: #4da6ff; --purple: #c080f0;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
-    background: var(--bg); color: var(--text); line-height: 1.85;
-    max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem;
-  }
-  h1 { text-align: center; font-size: 1.8rem; color: #fff; margin-bottom: 0.25rem; }
-  h1 .ver { font-size: 0.9rem; color: var(--text-dim); font-weight: normal; }
-  h2 {
-    color: var(--red); font-size: 1.3rem;
-    margin: 2.5rem 0 0.8rem; padding-bottom: 0.3rem;
-    border-bottom: 2px solid var(--border);
-  }
-  h3 {
-    color: var(--gold); font-size: 1.05rem; margin: 1.5rem 0 0.5rem;
-  }
-  h4 {
-    color: var(--blue); font-size: 0.95rem; margin: 1rem 0 0.4rem;
-  }
-  p { margin-bottom: 0.8rem; }
-  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
-  li { margin-bottom: 0.3rem; }
-  table {
-    width: 100%; border-collapse: collapse;
-    margin: 0.6rem 0 1.2rem; font-size: 0.9rem;
-  }
-  th, td {
-    border: 1px solid var(--border); padding: 0.5rem 0.7rem; text-align: left;
-  }
-  th { background: #1e2a3a; color: var(--gold); font-weight: 600; white-space: nowrap; }
-  td { background: var(--card); }
-  tr:hover td { background: #1c2840; }
-  code {
-    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
-    background: #0d1117; padding: 0.12em 0.4em; border-radius: 3px; font-size: 0.9em;
-    white-space: nowrap;
-  }
-  pre {
-    background: #0d1117; border: 1px solid var(--border); border-radius: 6px;
-    padding: 0.8rem 1rem; margin: 0.6rem 0 1rem; overflow-x: auto;
-    font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
-    font-size: 0.85rem; line-height: 1.6;
-  }
-  .meta { text-align: center; color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1.5rem; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>rks_extra 管理员使用手册 v2.1</title>
+  <style>
+    :root {
+      --bg: #1a1a2e;
+      --card: #16213e;
+      --gold: #f0c040;
+      --text: #ccc;
+      --text-dim: #999;
+      --border: #2a2a4a;
+      --red: #e94560;
+      --green: #4ecca3;
+      --blue: #4da6ff;
+      --purple: #c080f0;
+    }
 
-  /* 提示框 */
-  .tip, .warn, .info, .danger {
-    border-radius: 8px; padding: 1rem 1.2rem; margin: 1rem 0; font-size: 0.9rem; line-height: 1.7;
-  }
-  .tip  { background: #0a1f1a; border: 1px solid var(--green); }
-  .warn { background: #1f1a0a; border: 1px solid #d0a040; }
-  .info { background: #0a1a2f; border: 1px solid var(--blue); }
-  .danger { background: #1f0a0a; border: 1px solid var(--red); }
-  .tip strong  { color: var(--green); }
-  .warn strong { color: #f0c040; }
-  .info strong { color: var(--blue); }
-  .danger strong { color: var(--red); }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  .toc { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.5rem; margin: 1.5rem 0; }
-  .toc summary { color: var(--gold); font-weight: 600; cursor: pointer; font-size: 1rem; }
-  .toc ol { margin-top: 0.8rem; }
+    body {
+      font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
 
-  /* 流程图样式 */
-  .flow {
-    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
-    padding: 1.2rem; margin: 1rem 0; font-size: 0.88rem; line-height: 1.9;
-    text-align: center;
-  }
-  .flow .arrow { color: var(--text-dim); margin: 0 0.5rem; }
-  .flow .step { display: inline-block; background: #1e2a3a; border-radius: 5px; padding: 0.15rem 0.5rem; margin: 0.15rem; }
-  .flow .decision { color: var(--gold); font-weight: 600; }
-  .flow .action  { color: var(--red); font-weight: 600; }
-  .flow .safe    { color: var(--green); }
-</style>
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    h1 .ver {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-weight: normal;
+    }
+
+    h2 {
+      color: var(--red);
+      font-size: 1.3rem;
+      margin: 2.5rem 0 0.8rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h3 {
+      color: var(--gold);
+      font-size: 1.05rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    h4 {
+      color: var(--blue);
+      font-size: 0.95rem;
+      margin: 1rem 0 0.4rem;
+    }
+
+    p {
+      margin-bottom: 0.8rem;
+    }
+
+    ul,
+    ol {
+      margin: 0.5rem 0 1rem 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.6rem 0 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.7rem;
+      text-align: left;
+    }
+
+    th {
+      background: #1e2a3a;
+      color: var(--gold);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    td {
+      background: var(--card);
+    }
+
+    tr:hover td {
+      background: #1c2840;
+    }
+
+    code {
+      font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+      background: #0d1117;
+      padding: 0.12em 0.4em;
+      border-radius: 3px;
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
+
+    pre {
+      background: #0d1117;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      margin: 0.6rem 0 1rem;
+      overflow-x: auto;
+      font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .meta {
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+
+    /* 提示框 */
+    .tip,
+    .warn,
+    .info,
+    .danger {
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .tip {
+      background: #0a1f1a;
+      border: 1px solid var(--green);
+    }
+
+    .warn {
+      background: #1f1a0a;
+      border: 1px solid #d0a040;
+    }
+
+    .info {
+      background: #0a1a2f;
+      border: 1px solid var(--blue);
+    }
+
+    .danger {
+      background: #1f0a0a;
+      border: 1px solid var(--red);
+    }
+
+    .tip strong {
+      color: var(--green);
+    }
+
+    .warn strong {
+      color: #f0c040;
+    }
+
+    .info strong {
+      color: var(--blue);
+    }
+
+    .danger strong {
+      color: var(--red);
+    }
+
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .toc summary {
+      color: var(--gold);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .toc ol {
+      margin-top: 0.8rem;
+    }
+
+    /* 流程图样式 */
+    .flow {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+      line-height: 1.9;
+      text-align: center;
+    }
+
+    .flow .arrow {
+      color: var(--text-dim);
+      margin: 0 0.5rem;
+    }
+
+    .flow .step {
+      display: inline-block;
+      background: #1e2a3a;
+      border-radius: 5px;
+      padding: 0.15rem 0.5rem;
+      margin: 0.15rem;
+    }
+
+    .flow .decision {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .flow .action {
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .flow .safe {
+      color: var(--green);
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>🛡️ rks_extra 管理员使用手册 <span class="ver">v1.2</span></h1>
-<p class="meta">内部文档 · 请勿外传 · 命名空间 rks_extra</p>
+  <h1>🛡️ rks_extra 管理员使用手册 <span class="ver">v2.1</span></h1>
+  <p class="meta">内部文档 · 请勿外传 · 命名空间 rks_extra</p>
 
-<!-- ===== 目录 ===== -->
-<details class="toc" open>
-  <summary>📑 目录</summary>
+  <!-- ===== 目录 ===== -->
+  <details class="toc" open>
+    <summary>📑 目录</summary>
+    <ol>
+      <li><a href="#overview">概述与架构</a></li>
+      <li><a href="#quickstart">快速上手（新服必读）</a></li>
+      <li><a href="#admin-tags">管理员白名单</a></li>
+      <li><a href="#op-leak">OP 泄露检测</a></li>
+      <li><a href="#tnt-control">TNT 用量管控</a></li>
+      <li><a href="#tnt-free">防爆区管理</a></li>
+      <li><a href="#explosive">爆炸物检测（水晶/矿车）</a></li>
+      <li><a href="#alerts">周期警报系统</a></li>
+      <li><a href="#sus-record">嫌疑人持久记录（新）</a></li>
+      <li><a href="#scoreboards">计分板参考</a></li>
+      <li><a href="#troubleshoot">排错指南</a></li>
+      <li><a href="#admin-panel">管理员面板 <span style="color:#4ecca3;">NEW v2.1</span></a></li>
+    </ol>
+  </details>
+
+  <!-- ================================================================ -->
+  <!-- 1. 概述 -->
+  <!-- ================================================================ -->
+  <h2 id="overview">1. 概述与架构</h2>
+
+  <p><strong>rks_extra</strong> 是一个 Minecraft 服务器安全数据包，提供<strong>六大</strong>核心功能：</p>
+
+  <table>
+    <tr>
+      <th>模块</th>
+      <th>功能</th>
+      <th>核心原理</th>
+    </tr>
+    <tr>
+      <td>🔑 OP 泄露检测</td>
+      <td>检测玩家是否非法获得 OP 权限</td>
+      <td>每 tick 检查全体玩家的游戏模式、飞行权限、无敌状态、背包命令方块</td>
+    </tr>
+    <tr>
+      <td>📋 嫌疑人持久记录 <span style="color:#4ecca3;">NEW</span></td>
+      <td>记录嫌疑人信息，管理员上线后自动推送</td>
+      <td>持久计分板 + 上线检测 + 可点击交互命令</td>
+    </tr>
+    <tr>
+      <td>💣 TNT 用量管控</td>
+      <td>限制普通玩家每分钟 TNT 使用量</td>
+      <td>Minecraft 原生统计 + 快照比对，<strong>每分钟限 1 个</strong>，超量没收并归还</td>
+    </tr>
+    <tr>
+      <td>🏗️ 防爆区</td>
+      <td>保护指定区域不被 TNT 破坏</td>
+      <td>每 tick 遍历动态区域列表，自动清除区域内实体 TNT</td>
+    </tr>
+    <tr>
+      <td>💥 爆炸物检测</td>
+      <td>禁止在主世界使用末影水晶和 TNT 矿车</td>
+      <td>每 tick 检测 8 格内放置者 + 全局清理</td>
+    </tr>
+    <tr>
+      <td>🎛️ 管理员面板 <span style="color:#4ecca3;">NEW v2.1</span></td>
+      <td>一键式图形化管理界面，替代纯命令操作</td>
+      <td>胡萝卜钓竿右键触发 + tellraw 交互按钮</td>
+    </tr>
+  </table>
+
+  <div class="info">
+    <strong>📌 运行机制</strong><br>
+    数据包通过 <code>#minecraft:tick</code> 标签注册 <code>rks_extra:tick</code> 函数，每游戏 tick（0.05 秒）执行一次。
+    全局计数器 <code>loop</code> 每 200 tick（10 秒）轮转一次，周期警报在 loop=100 时触发（约每 5 秒）。
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- 2. 快速上手 -->
+  <!-- ================================================================ -->
+  <h2 id="quickstart">2. 快速上手（新服必读）</h2>
+
+  <h3>2.1 安装数据包</h3>
   <ol>
-    <li><a href="#overview">概述与架构</a></li>
-    <li><a href="#quickstart">快速上手（新服必读）</a></li>
-    <li><a href="#admin-tags">管理员白名单</a></li>
-    <li><a href="#op-leak">OP 泄露检测</a></li>
-    <li><a href="#tnt-control">TNT 用量管控</a></li>
-    <li><a href="#tnt-free">防爆区管理</a></li>
-    <li><a href="#explosive">爆炸物检测（水晶/矿车）</a></li>
-    <li><a href="#alerts">周期警报系统</a></li>
-    <li><a href="#sus-record">嫌疑人持久记录（新）</a></li>
-    <li><a href="#scoreboards">计分板参考</a></li>
-    <li><a href="#troubleshoot">排错指南</a></li>
+    <li>将 <code>rks_security-26.2</code> 文件夹放入世界存档的 <code>datapacks/</code> 目录。</li>
+    <li>重启服务器或执行 <code>/reload</code>。</li>
+    <li>看到聊天栏显示 <strong>「已加载rks_extra数据包v2.1」</strong>即表示成功。</li>
   </ol>
-</details>
 
-<!-- ================================================================ -->
-<!-- 1. 概述 -->
-<!-- ================================================================ -->
-<h2 id="overview">1. 概述与架构</h2>
+  <h3>2.2 安装后第一件事：设置你自己为管理员</h3>
 
-<p><strong>rks_extra</strong> 是一个 Minecraft 服务器安全数据包，提供<strong>五大</strong>核心功能：</p>
+  <div class="danger">
+    <strong>⚠️ 重要：</strong>加载数据包后，<strong>你的 OP 权限会立即被检测为"泄露"</strong>。必须在 5 秒内给自己打上管理员标签！
+  </div>
 
-<table>
-  <tr><th>模块</th><th>功能</th><th>核心原理</th></tr>
-  <tr>
-    <td>🔑 OP 泄露检测</td>
-    <td>检测玩家是否非法获得 OP 权限</td>
-    <td>每 tick 检查全体玩家的游戏模式、飞行权限、无敌状态、背包命令方块</td>
-  </tr>
-  <tr>
-    <td>📋 嫌疑人持久记录 <span style="color:#4ecca3;">NEW</span></td>
-    <td>记录嫌疑人信息，管理员上线后自动推送</td>
-    <td>持久计分板 + 上线检测 + 可点击交互命令</td>
-  </tr>
-  <tr>
-    <td>💣 TNT 用量管控</td>
-    <td>限制普通玩家每分钟 TNT 使用量</td>
-    <td>Minecraft 原生统计 + 快照比对，<strong>每分钟限 1 个</strong>，超量没收并归还</td>
-  </tr>
-  <tr>
-    <td>🏗️ 防爆区</td>
-    <td>保护指定区域不被 TNT 破坏</td>
-    <td>每 tick 遍历动态区域列表，自动清除区域内实体 TNT</td>
-  </tr>
-  <tr>
-    <td>💥 爆炸物检测</td>
-    <td>禁止在主世界使用末影水晶和 TNT 矿车</td>
-    <td>每 tick 检测 8 格内放置者 + 全局清理</td>
-  </tr>
-</table>
+  <pre>/tag &lt;你的ID&gt; add player</pre>
 
-<div class="info">
-  <strong>📌 运行机制</strong><br>
-  数据包通过 <code>#minecraft:tick</code> 标签注册 <code>rks_extra:tick</code> 函数，每游戏 tick（0.05 秒）执行一次。
-  全局计数器 <code>loop</code> 每 200 tick（10 秒）轮转一次，周期警报在 loop=100 时触发（约每 5 秒）。
-</div>
+  <p>打上 <code>player</code> 标签即可豁免所有 OP 泄露检测项。</p>
 
-<!-- ================================================================ -->
-<!-- 2. 快速上手 -->
-<!-- ================================================================ -->
-<h2 id="quickstart">2. 快速上手（新服必读）</h2>
+  <div class="tip">
+    <strong>✅ 验证是否成功：</strong>等 5~10 秒，如果不弹出 OP 泄露警报，说明设置正确。
+  </div>
 
-<h3>2.1 安装数据包</h3>
-<ol>
-  <li>将 <code>rks_security-26.2</code> 文件夹放入世界存档的 <code>datapacks/</code> 目录。</li>
-  <li>重启服务器或执行 <code>/reload</code>。</li>
-  <li>看到聊天栏显示 <strong>「已加载rks_extra数据包v1.2」</strong>即表示成功。</li>
-</ol>
+  <h3>2.3 设置其他管理员</h3>
+  <pre>/tag &lt;玩家ID&gt; add player</pre>
 
-<h3>2.2 安装后第一件事：设置你自己为管理员</h3>
+  <h3>2.4 （可选）设置爆炸信任玩家</h3>
+  <p>如果你希望某些玩家不受 TNT 限制（例如建筑工），给他们打上信任标签：</p>
+  <pre>/tag &lt;玩家ID&gt; add explosive_trusted</pre>
 
-<div class="danger">
-  <strong>⚠️ 重要：</strong>加载数据包后，<strong>你的 OP 权限会立即被检测为"泄露"</strong>。必须在 5 秒内给自己打上管理员标签！
-</div>
+  <div class="warn">
+    <strong>⚠️ 注意：</strong><code>explosive_trusted</code> 不包含 OP 泄露检测豁免。信任玩家仍需单独打管理员标签。
+  </div>
 
-<pre>/tag &lt;你的ID&gt; add player
-/tag &lt;你的ID&gt; add players</pre>
+  <!-- ================================================================ -->
+  <!-- 3. 管理员白名单 -->
+  <!-- ================================================================ -->
+  <h2 id="admin-tags">3. 管理员白名单</h2>
 
-<p>两条命令缺一不可——<code>player</code> 和 <code>players</code> 分别覆盖不同的检测项。如果只打一个，你仍然会被某些检测项标记。</p>
+  <p>管理员白名单使用<strong>一个被混淆命名的标签</strong>实现，恶意玩家很难意识到它是管理员标记：</p>
 
-<div class="tip">
-  <strong>✅ 验证是否成功：</strong>等 5~10 秒，如果不弹出 OP 泄露警报，说明设置正确。
-</div>
+  <table>
+    <tr>
+      <th>标签</th>
+      <th>覆盖的检测项</th>
+      <th>额外功能</th>
+    </tr>
+    <tr>
+      <td><code>player</code></td>
+      <td>创造模式 · 旁观模式 · 飞行权限(mayfly) · 无敌状态(Invulnerable) · 背包命令方块</td>
+      <td>接收所有安全警报广播</td>
+    </tr>
+    <tr>
+      <td><code>explosive_trusted</code></td>
+      <td>—（不涉及 OP 检测）</td>
+      <td>绕过 TNT 数量限制 · 免于水晶/矿车检测</td>
+    </tr>
+  </table>
 
-<h3>2.3 设置其他管理员</h3>
-<pre>/tag &lt;玩家ID&gt; add player
-/tag &lt;玩家ID&gt; add players</pre>
+  <h3>3.1 混淆策略说明</h3>
+  <div class="info">
+    <strong>🔐
+      设计意图：</strong><code>player</code>（玩家，单数）看起来像是"人人都有"的通用标签。恶意玩家即使通过某种方式查看到自己缺少该标签，也只会以为是服务器遗漏——而不会意识到这是管理员白名单。只需打上
+    <strong>一个</strong> <code>player</code> 标签即可完全免疫所有 OP 泄露检测。
+  </div>
 
-<h3>2.4 （可选）设置爆炸信任玩家</h3>
-<p>如果你希望某些玩家不受 TNT 限制（例如建筑工），给他们打上信任标签：</p>
-<pre>/tag &lt;玩家ID&gt; add explosive_trusted</pre>
+  <h3>3.2 查看与维护</h3>
+  <table>
+    <tr>
+      <th>操作</th>
+      <th>命令</th>
+    </tr>
+    <tr>
+      <td>查看某玩家的所有标签</td>
+      <td><code>/data get entity &lt;玩家&gt; Tags</code></td>
+    </tr>
+    <tr>
+      <td>移除某玩家管理员身份</td>
+      <td><code>/tag &lt;玩家&gt; remove player</code></td>
+    </tr>
+    <tr>
+      <td>移除爆炸信任</td>
+      <td><code>/tag &lt;玩家&gt; remove explosive_trusted</code></td>
+    </tr>
+  </table>
 
-<div class="warn">
-  <strong>⚠️ 注意：</strong><code>explosive_trusted</code> 不包含 OP 泄露检测豁免。信任玩家仍需单独打管理员标签。
-</div>
+  <!-- ================================================================ -->
+  <!-- 4. OP 泄露检测 -->
+  <!-- ================================================================ -->
+  <h2 id="op-leak">4. OP 泄露检测</h2>
 
-<!-- ================================================================ -->
-<!-- 3. 管理员白名单 -->
-<!-- ================================================================ -->
-<h2 id="admin-tags">3. 管理员白名单</h2>
+  <h3>4.1 检测项详解</h3>
+  <p>每 tick 对所有玩家执行以下五项检查。任一命中且缺少对应标签，则标记 <code>good=1</code>：</p>
 
-<p>管理员白名单使用<strong>两个被混淆命名的标签</strong>实现，恶意玩家很难意识到它们是管理员标记：</p>
+  <table>
+    <tr>
+      <th>#</th>
+      <th>检测条件</th>
+      <th>所需豁免标签</th>
+      <th>触发场景</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><code>gamemode=creative</code></td>
+      <td><code>player</code></td>
+      <td>玩家处于创造模式</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><code>gamemode=spectator</code></td>
+      <td><code>player</code></td>
+      <td>玩家处于旁观模式</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><code>abilities:{mayfly:1b}</code></td>
+      <td><code>player</code></td>
+      <td>玩家拥有飞行权限（通常是 OP 获得）</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><code>Invulnerable:1b</code></td>
+      <td><code>player</code></td>
+      <td>玩家处于无敌状态</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>背包含有 <code>command_block</code></td>
+      <td><code>player</code></td>
+      <td>玩家背包中有命令方块（通常只有创造+OP 能拿）</td>
+    </tr>
+  </table>
 
-<table>
-  <tr><th>标签</th><th>覆盖的检测项</th><th>额外功能</th></tr>
-  <tr>
-    <td><code>player</code>（单数）</td>
-    <td>创造模式 · 无敌状态(Invulnerable) · 背包命令方块</td>
-    <td>接收所有安全警报广播</td>
-  </tr>
-  <tr>
-    <td><code>players</code>（复数）</td>
-    <td>旁观模式 · 飞行权限(mayfly)</td>
-    <td>—</td>
-  </tr>
-  <tr>
-    <td><code>explosive_trusted</code></td>
-    <td>—（不涉及 OP 检测）</td>
-    <td>绕过 TNT 数量限制 · 免于水晶/矿车检测</td>
-  </tr>
-</table>
+  <h3>4.2 工作流程</h3>
+  <div class="flow">
+    <span class="step">每 tick</span>
+    <span class="arrow">→</span>
+    <span class="step">遍历全体玩家</span>
+    <span class="arrow">→</span>
+    <span class="step">检查 5 项条件</span>
+    <span class="arrow">→</span>
+    <span class="decision">命中且无标签？</span>
+    <span class="arrow">→</span>
+    <span class="step action">good=1</span>
+    <span class="arrow">→</span>
+    <span class="step">每 5 秒广播警报</span>
+  </div>
 
-<h3>3.1 混淆策略说明</h3>
-<div class="info">
-  <strong>🔐 设计意图：</strong><code>player</code>（玩家，单数）和 <code>players</code>（玩家们，复数）看起来像是"人人都有"的通用标签。恶意玩家即使通过某种方式查看到自己缺少某个标签，也只会以为是服务器遗漏——而不会意识到这是管理员白名单。两者分工不同，<strong>必须同时打上</strong>才能完全免疫 OP 泄露检测。
-</div>
-
-<h3>3.2 查看与维护</h3>
-<table>
-  <tr><th>操作</th><th>命令</th></tr>
-  <tr><td>查看某玩家的所有标签</td><td><code>/data get entity &lt;玩家&gt; Tags</code></td></tr>
-  <tr><td>移除某玩家管理员身份</td><td><code>/tag &lt;玩家&gt; remove player</code><br><code>/tag &lt;玩家&gt; remove players</code></td></tr>
-  <tr><td>移除爆炸信任</td><td><code>/tag &lt;玩家&gt; remove explosive_trusted</code></td></tr>
-</table>
-
-<!-- ================================================================ -->
-<!-- 4. OP 泄露检测 -->
-<!-- ================================================================ -->
-<h2 id="op-leak">4. OP 泄露检测</h2>
-
-<h3>4.1 检测项详解</h3>
-<p>每 tick 对所有玩家执行以下五项检查。任一命中且缺少对应标签，则标记 <code>good=1</code>：</p>
-
-<table>
-  <tr><th>#</th><th>检测条件</th><th>所需豁免标签</th><th>触发场景</th></tr>
-  <tr>
-    <td>1</td>
-    <td><code>gamemode=creative</code></td>
-    <td><code>player</code></td>
-    <td>玩家处于创造模式</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td><code>gamemode=spectator</code></td>
-    <td><code>players</code></td>
-    <td>玩家处于旁观模式</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td><code>abilities:{mayfly:1b}</code></td>
-    <td><code>players</code></td>
-    <td>玩家拥有飞行权限（通常是 OP 获得）</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td><code>Invulnerable:1b</code></td>
-    <td><code>player</code></td>
-    <td>玩家处于无敌状态</td>
-  </tr>
-  <tr>
-    <td>5</td>
-    <td>背包含有 <code>command_block</code></td>
-    <td><code>player</code></td>
-    <td>玩家背包中有命令方块（通常只有创造+OP 能拿）</td>
-  </tr>
-</table>
-
-<h3>4.2 工作流程</h3>
-<div class="flow">
-  <span class="step">每 tick</span>
-  <span class="arrow">→</span>
-  <span class="step">遍历全体玩家</span>
-  <span class="arrow">→</span>
-  <span class="step">检查 5 项条件</span>
-  <span class="arrow">→</span>
-  <span class="decision">命中且无标签？</span>
-  <span class="arrow">→</span>
-  <span class="step action">good=1</span>
-  <span class="arrow">→</span>
-  <span class="step">每 5 秒广播警报</span>
-</div>
-
-<h3>4.3 警报格式</h3>
-<p>管理员会收到以下格式的告警消息：</p>
-<pre>[op泄露警报]
+  <h3>4.3 警报格式</h3>
+  <p>管理员会收到以下格式的告警消息：</p>
+  <pre>[op泄露警报]
 嫌疑玩家: &lt;玩家ID&gt;</pre>
-<p>多个嫌疑玩家会以逗号分隔列出。</p>
+  <p>多个嫌疑玩家会以逗号分隔列出。</p>
 
-<h3>4.4 处理流程</h3>
-<ol>
-  <li>收到告警后，<strong>立即</strong>查看嫌疑玩家列表：
-    <pre>/scoreboard players list @a[scores={good=1}]</pre>
-  </li>
-  <li>确认该玩家是否合法（例如是否是你刚设的管理员但漏打标签）：</li>
-  <li><strong>如果是合法玩家：</strong>补打标签并清除标记
-    <pre>/tag &lt;玩家&gt; add player
-/tag &lt;玩家&gt; add players
+  <h3>4.4 处理流程</h3>
+  <ol>
+    <li>收到告警后，<strong>立即</strong>查看嫌疑玩家列表：
+      <pre>/scoreboard players list @a[scores={good=1}]</pre>
+    </li>
+    <li>确认该玩家是否合法（例如是否是你刚设的管理员但漏打标签）：</li>
+    <li><strong>如果是合法玩家：</strong>补打标签并清除标记
+      <pre>/tag &lt;玩家&gt; add player
 /scoreboard players set &lt;玩家&gt; good 0</pre>
-  </li>
-  <li><strong>如果是非法玩家：</strong>立即采取措施（封禁/撤销 OP 等），然后清除标记以停止重复告警：
-    <pre>/scoreboard players set &lt;玩家&gt; good 0</pre>
-  </li>
-</ol>
+    </li>
+    <li><strong>如果是非法玩家：</strong>立即采取措施（封禁/撤销 OP 等），然后清除标记以停止重复告警：
+      <pre>/scoreboard players set &lt;玩家&gt; good 0</pre>
+    </li>
+  </ol>
 
-<div class="warn">
-  <strong>⚠️ 注意：</strong><code>good=1</code> 只是<strong>标记</strong>，不会自动撤销玩家的 OP 或踢出玩家。你需要手动处置。如果不处理，警报会每 5 秒重复一次。
-</div>
+  <div class="warn">
+    <strong>⚠️ 注意：</strong><code>good=1</code> 只是<strong>标记</strong>，不会自动撤销玩家的 OP 或踢出玩家。你需要手动处置。如果不处理，警报会每 5 秒重复一次。
+  </div>
 
-<!-- ================================================================ -->
-<!-- 5. TNT 用量管控 -->
-<!-- ================================================================ -->
-<h2 id="tnt-control">5. TNT 用量管控</h2>
+  <!-- ================================================================ -->
+  <!-- 5. TNT 用量管控 -->
+  <!-- ================================================================ -->
+  <h2 id="tnt-control">5. TNT 用量管控</h2>
 
-<h3>5.1 核心规则</h3>
-<ul>
-  <li>普通玩家<strong>每分钟最多放置 1 个 TNT</strong>。</li>
-  <li>拥有 <code>explosive_trusted</code> 标签的玩家<strong>不受限制</strong>。</li>
-  <li>每 60 秒（1200 tick）<strong>全局重置</strong>所有玩家的 TNT 计数。</li>
-</ul>
+  <h3>5.1 核心规则</h3>
+  <ul>
+    <li>普通玩家<strong>每分钟最多放置 1 个 TNT</strong>。</li>
+    <li>拥有 <code>explosive_trusted</code> 标签的玩家<strong>不受限制</strong>。</li>
+    <li>每 60 秒（1200 tick）<strong>全局重置</strong>所有玩家的 TNT 计数。</li>
+  </ul>
 
-<h3>5.2 完整工作流程</h3>
-<div class="flow" style="text-align:left; line-height:2;">
-  <strong>Step 1 — 检测放置：</strong><br>
-  <span style="margin-left:1.5em;">每 tick 比对 <code>tnt_used</code>（原生统计）与 <code>tnt_prev</code>（快照），不一致 → 判定为新放置。</span><br><br>
-  <strong>Step 2 — 通知与计数：</strong><br>
-  <span style="margin-left:1.5em;">→ 向管理员广播「XX 放置了TNT」</span><br>
-  <span style="margin-left:1.5em;">→ 非信任玩家 <code>tnt_count + 1</code></span><br>
-  <span style="margin-left:1.5em;">→ 更新快照 <code>tnt_prev = tnt_used</code></span><br>
-  <span style="margin-left:1.5em;">→ 若 tnt_count=1（首次），提示「服务器每分钟只能放置1个TNT」</span><br><br>
-  <strong>Step 3 — 超量处置（tnt_count ≥ 2）：</strong><br>
-  <span style="margin-left:1.5em;">→ 清除玩家周围 8×8×8 区域内所有已放置的 TNT</span><br>
-  <span style="margin-left:1.5em;">→ 警告玩家「服务器每分钟只能放置1个TNT」</span><br>
-  <span style="margin-left:1.5em;">→ 设置 <code>tnt_return_cd = 2</code>（启动归还倒计时）</span><br>
-  <span style="margin-left:1.5em;">→ tnt_count 重置为 1，tnt_restrained 标记为 1</span><br><br>
-  <strong>Step 4 — 归还 TNT（冷却 2 tick 后）：</strong><br>
-  <span style="margin-left:1.5em;">→ tnt_return_cd 倒计时：2 → 1 → 0</span><br>
-  <span style="margin-left:1.5em;">→ 归零时给予玩家 1 个 TNT，然后设为 -1（停止循环）</span><br><br>
-  <strong>Step 5 — 全局周期重置（每 60 秒）：</strong><br>
-  <span style="margin-left:1.5em;">→ 所有玩家 tnt_count 归零</span><br>
-  <span style="margin-left:1.5em;">→ tnt_restrained 标记清除</span><br>
-  <span style="margin-left:1.5em;">→ 全员提示「TNT限制已重置」</span>
-</div>
+  <h3>5.2 完整工作流程</h3>
+  <div class="flow" style="text-align:left; line-height:2;">
+    <strong>Step 1 — 检测放置：</strong><br>
+    <span style="margin-left:1.5em;">每 tick 比对 <code>tnt_used</code>（原生统计）与 <code>tnt_prev</code>（快照），不一致 →
+      判定为新放置。</span><br><br>
+    <strong>Step 2 — 通知与计数：</strong><br>
+    <span style="margin-left:1.5em;">→ 向管理员广播「XX 放置了TNT」</span><br>
+    <span style="margin-left:1.5em;">→ 非信任玩家 <code>tnt_count + 1</code></span><br>
+    <span style="margin-left:1.5em;">→ 更新快照 <code>tnt_prev = tnt_used</code></span><br>
+    <span style="margin-left:1.5em;">→ 若 tnt_count=1（首次），提示「服务器每分钟只能放置1个TNT」</span><br><br>
+    <strong>Step 3 — 超量处置（tnt_count ≥ 2）：</strong><br>
+    <span style="margin-left:1.5em;">→ 清除玩家周围 8×8×8 区域内所有已放置的 TNT</span><br>
+    <span style="margin-left:1.5em;">→ 警告玩家「服务器每分钟只能放置1个TNT」</span><br>
+    <span style="margin-left:1.5em;">→ 设置 <code>tnt_return_cd = 2</code>（启动归还倒计时）</span><br>
+    <span style="margin-left:1.5em;">→ tnt_count 重置为 1，tnt_restrained 标记为 1</span><br><br>
+    <strong>Step 4 — 归还 TNT（冷却 2 tick 后）：</strong><br>
+    <span style="margin-left:1.5em;">→ tnt_return_cd 倒计时：2 → 1 → 0</span><br>
+    <span style="margin-left:1.5em;">→ 归零时给予玩家 1 个 TNT，然后设为 -1（停止循环）</span><br><br>
+    <strong>Step 5 — 全局周期重置（每 60 秒）：</strong><br>
+    <span style="margin-left:1.5em;">→ 所有玩家 tnt_count 归零</span><br>
+    <span style="margin-left:1.5em;">→ tnt_restrained 标记清除</span><br>
+    <span style="margin-left:1.5em;">→ 全员提示「TNT限制已重置」</span>
+  </div>
 
-<h3>5.3 为什么要用"限制+归还"而不是"直接扣掉"</h3>
-<p>直接扣除 TNT 会让恶意玩家不断尝试。我们的策略是：</p>
-<ol>
-  <li><strong>第 1 个 TNT：</strong>允许放置，但给予警告提示。</li>
-  <li><strong>第 2 个 TNT：</strong>清除并警告，但不归还（已放置的 TNT 被没收）。</li>
-  <li>2 tick 后归还 1 个 TNT——保证善意玩家不会永久损失物品，同时让恶意玩家无法堆叠爆炸。</li>
-</ol>
+  <h3>5.3 为什么要用"限制+归还"而不是"直接扣掉"</h3>
+  <p>直接扣除 TNT 会让恶意玩家不断尝试。我们的策略是：</p>
+  <ol>
+    <li><strong>第 1 个 TNT：</strong>允许放置，但给予警告提示。</li>
+    <li><strong>第 2 个 TNT：</strong>清除并警告，但不归还（已放置的 TNT 被没收）。</li>
+    <li>2 tick 后归还 1 个 TNT——保证善意玩家不会永久损失物品，同时让恶意玩家无法堆叠爆炸。</li>
+  </ol>
 
-<h3>5.4 管理命令</h3>
-<table>
-  <tr><th>操作</th><th>命令</th><th>说明</th></tr>
-  <tr>
-    <td>查看玩家 TNT 计数</td>
-    <td><code>/scoreboard players get &lt;玩家&gt; tnt_count</code></td>
-    <td>0=本分钟未使用, 1=已用一个, ≥2 会触发没收</td>
-  </tr>
-  <tr>
-    <td>手动重置某玩家</td>
-    <td><code>/scoreboard players set &lt;玩家&gt; tnt_count 0</code></td>
-    <td>立即将其 TNT 计数归零，本分钟可再放 1 个</td>
-  </tr>
-  <tr>
-    <td>手动触发全局重置</td>
-    <td><code>/function rks_extra:tnt_off</code></td>
-    <td>立即重置所有玩家的 TNT 计数（不等 60 秒）</td>
-  </tr>
-  <tr>
-    <td>查看玩家 TNT 使用统计</td>
-    <td><code>/scoreboard players get &lt;玩家&gt; tnt_used</code></td>
-    <td>原生统计，累计放置总数</td>
-  </tr>
-</table>
+  <h3>5.4 管理命令</h3>
+  <table>
+    <tr>
+      <th>操作</th>
+      <th>命令</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>查看玩家 TNT 计数</td>
+      <td><code>/scoreboard players get &lt;玩家&gt; tnt_count</code></td>
+      <td>0=本分钟未使用, 1=已用一个, ≥2 会触发没收</td>
+    </tr>
+    <tr>
+      <td>手动重置某玩家</td>
+      <td><code>/scoreboard players set &lt;玩家&gt; tnt_count 0</code></td>
+      <td>立即将其 TNT 计数归零，本分钟可再放 1 个</td>
+    </tr>
+    <tr>
+      <td>手动触发全局重置</td>
+      <td><code>/function rks_extra:tnt_off</code></td>
+      <td>立即重置所有玩家的 TNT 计数（不等 60 秒）</td>
+    </tr>
+    <tr>
+      <td>查看玩家 TNT 使用统计</td>
+      <td><code>/scoreboard players get &lt;玩家&gt; tnt_used</code></td>
+      <td>原生统计，累计放置总数</td>
+    </tr>
+  </table>
 
-<h3>5.5 相关计分板一览</h3>
-<table>
-  <tr><th>计分板</th><th>挂载目标</th><th>含义</th></tr>
-  <tr><td><code>tnt_used</code></td><td>每个玩家</td><td>原生 TNT 放置统计（只增不减）</td></tr>
-  <tr><td><code>tnt_prev</code></td><td>每个玩家</td><td>上一次 tick 的 tnt_used 快照</td></tr>
-  <tr><td><code>tnt_count</code></td><td>每个玩家</td><td>当前分钟已用 TNT 数，≥2 触发没收</td></tr>
-  <tr><td><code>tnt_restrained</code></td><td>每个玩家</td><td>本分钟是否已被限制过（防重复处罚）</td></tr>
-  <tr><td><code>tnt_return_cd</code></td><td>每个玩家</td><td>归还冷却：0=归还, 1~2=等待, -1=已停止</td></tr>
-  <tr><td><code>tnt_timer</code></td><td><code>#Global</code></td><td>全局周期计时器，1200 tick（60秒）一轮</td></tr>
-</table>
+  <h3>5.5 相关计分板一览</h3>
+  <table>
+    <tr>
+      <th>计分板</th>
+      <th>挂载目标</th>
+      <th>含义</th>
+    </tr>
+    <tr>
+      <td><code>tnt_used</code></td>
+      <td>每个玩家</td>
+      <td>原生 TNT 放置统计（只增不减）</td>
+    </tr>
+    <tr>
+      <td><code>tnt_prev</code></td>
+      <td>每个玩家</td>
+      <td>上一次 tick 的 tnt_used 快照</td>
+    </tr>
+    <tr>
+      <td><code>tnt_count</code></td>
+      <td>每个玩家</td>
+      <td>当前分钟已用 TNT 数，≥2 触发没收</td>
+    </tr>
+    <tr>
+      <td><code>tnt_restrained</code></td>
+      <td>每个玩家</td>
+      <td>本分钟是否已被限制过（防重复处罚）</td>
+    </tr>
+    <tr>
+      <td><code>tnt_return_cd</code></td>
+      <td>每个玩家</td>
+      <td>归还冷却：0=归还, 1~2=等待, -1=已停止</td>
+    </tr>
+    <tr>
+      <td><code>tnt_timer</code></td>
+      <td><code>#Global</code></td>
+      <td>全局周期计时器，1200 tick（60秒）一轮</td>
+    </tr>
+  </table>
 
-<!-- ================================================================ -->
-<!-- 6. 防爆区 -->
-<!-- ================================================================ -->
-<h2 id="tnt-free">6. 防爆区管理</h2>
+  <!-- ================================================================ -->
+  <!-- 6. 防爆区 -->
+  <!-- ================================================================ -->
+  <h2 id="tnt-free">6. 防爆区管理</h2>
 
-<h3>6.1 功能说明</h3>
-<p>防爆区是<strong>动态可配置的区域列表</strong>。每 tick 遍历所有区域，<strong>自动清除区域内已点燃的实体 TNT</strong>（不会阻止放置，但 TNT 点燃后立即被移除）。</p>
-<p>区域数据存储在 <code>storage rks_extra:storage tnt_free.areas</code>，支持游戏内热编辑，无需重启或 /reload。</p>
+  <h3>6.1 功能说明</h3>
+  <p>防爆区是<strong>动态可配置的区域列表</strong>。每 tick 遍历所有区域，<strong>自动清除区域内已点燃的实体 TNT</strong>（不会阻止放置，但 TNT 点燃后立即被移除）。</p>
+  <p>区域数据存储在 <code>storage rks_extra:storage tnt_free.areas</code>，支持游戏内热编辑，无需重启或 /reload。</p>
 
-<h3>6.2 默认区域</h3>
-<p>首次加载时会自动设置 5 个默认防爆区。如果 storage 中已存在数据（例如你编辑后 /reload），不会覆盖。</p>
+  <h3>6.2 默认区域</h3>
+  <p>首次加载时会自动设置 5 个默认防爆区。如果 storage 中已存在数据（例如你编辑后 /reload），不会覆盖。</p>
 
-<h3>6.3 管理命令</h3>
-<table>
-  <tr><th>操作</th><th>命令</th></tr>
-  <tr>
-    <td>查看所有防爆区</td>
-    <td><code>/function rks_extra:tnt_free_area/list</code></td>
-  </tr>
-  <tr>
-    <td>添加防爆区</td>
-    <td><code>/function rks_extra:tnt_free_area/add {x:&lt;起点X&gt;,y:&lt;起点Y&gt;,z:&lt;起点Z&gt;,dx:&lt;X跨度&gt;,dy:&lt;Y跨度&gt;,dz:&lt;Z跨度&gt;}</code></td>
-  </tr>
-  <tr>
-    <td>删除防爆区（按序号）</td>
-    <td><code>/function rks_extra:tnt_free_area/remove {index:&lt;序号&gt;}</code></td>
-  </tr>
-  <tr>
-    <td>清空所有防爆区</td>
-    <td><code>/function rks_extra:tnt_free_area/clear</code></td>
-  </tr>
-  <tr>
-    <td>恢复默认防爆区</td>
-    <td><code>/function rks_extra:tnt_free_area/init</code></td>
-  </tr>
-  <tr>
-    <td>查看原始数据</td>
-    <td><code>/data get storage rks_extra:storage tnt_free.areas</code></td>
-  </tr>
-</table>
+  <h3>6.3 管理命令</h3>
+  <table>
+    <tr>
+      <th>操作</th>
+      <th>命令</th>
+    </tr>
+    <tr>
+      <td>查看所有防爆区</td>
+      <td><code>/function rks_extra:tnt_free_area/list</code></td>
+    </tr>
+    <tr>
+      <td>添加防爆区</td>
+      <td>
+        <code>/function rks_extra:tnt_free_area/add {x:&lt;起点X&gt;,y:&lt;起点Y&gt;,z:&lt;起点Z&gt;,dx:&lt;X跨度&gt;,dy:&lt;Y跨度&gt;,dz:&lt;Z跨度&gt;,name:"&lt;名称&gt;"}</code>
+      </td>
+    </tr>
+    <tr>
+      <td>删除防爆区（按序号）</td>
+      <td><code>/function rks_extra:tnt_free_area/remove {index:&lt;序号&gt;}</code></td>
+    </tr>
+    <tr>
+      <td>清空所有防爆区</td>
+      <td><code>/function rks_extra:tnt_free_area/clear</code></td>
+    </tr>
+    <tr>
+      <td>恢复默认防爆区</td>
+      <td><code>/function rks_extra:tnt_free_area/init</code></td>
+    </tr>
+    <tr>
+      <td>查看原始数据</td>
+      <td><code>/data get storage rks_extra:storage tnt_free.areas</code></td>
+    </tr>
+  </table>
 
-<h3>6.4 使用示例</h3>
+  <h3>6.4 使用示例</h3>
 
-<h4>添加一个防爆区</h4>
-<p>例如保护出生点 (0, -64, 0) 到 (100, 320, 100) 的范围：</p>
-<pre>/function rks_extra:tnt_free_area/add {x:0,y:-64,z:0,dx:100,dy:384,dz:100}</pre>
-<p>参数说明：<code>x,y,z</code> 为区域起点坐标（含），<code>dx,dy,dz</code> 为从起点向正方向的跨度（含）。最终覆盖范围为 <code>[x, x+dx] × [y, y+dy] × [z, z+dz]</code>。</p>
+  <h4>添加一个防爆区</h4>
+  <p>例如保护出生点 (0, -64, 0) 到 (100, 320, 100) 的范围：</p>
+  <pre>/function rks_extra:tnt_free_area/add {x:0,y:-64,z:0,dx:100,dy:384,dz:100,name:"出生点"}</pre>
+  <p>参数说明：<code>x,y,z</code> 为区域起点坐标（含），<code>dx,dy,dz</code> 为从起点向正方向的跨度（含），<code>name</code> 为便于识别的名称。最终覆盖范围为
+    <code>[x, x+dx] × [y, y+dy] × [z, z+dz]</code>。
+  </p>
 
-<h4>删除一个防爆区</h4>
-<p>先用 <code>list</code> 查看序号，然后按序号删除（序号从 0 开始）：</p>
-<pre>/function rks_extra:tnt_free_area/list           ← 查看所有区域及序号
+  <h4>删除一个防爆区</h4>
+  <p>先用 <code>list</code> 查看序号，然后按序号删除（序号从 0 开始）：</p>
+  <pre>/function rks_extra:tnt_free_area/list           ← 查看所有区域及序号
 /function rks_extra:tnt_free_area/remove {index:3}  ← 删除序号 3 的区域</pre>
 
-<h4>重置为默认</h4>
-<pre>/function rks_extra:tnt_free_area/clear
+  <h4>重置为默认</h4>
+  <pre>/function rks_extra:tnt_free_area/clear
 /function rks_extra:tnt_free_area/init</pre>
 
-<div class="warn">
-  <strong>⚠️ 注意：</strong>防爆区只在<strong>主世界 (overworld)</strong>生效。末地、下界的 TNT 不受防爆区保护。
-</div>
+  <div class="warn">
+    <strong>⚠️ 注意：</strong>防爆区只在<strong>主世界 (overworld)</strong>生效。末地、下界的 TNT 不受防爆区保护。
+  </div>
 
-<!-- ================================================================ -->
-<!-- 7. 爆炸物检测 -->
-<!-- ================================================================ -->
-<h2 id="explosive">7. 爆炸物检测（水晶/矿车）</h2>
+  <!-- ================================================================ -->
+  <!-- 7. 爆炸物检测 -->
+  <!-- ================================================================ -->
+  <h2 id="explosive">7. 爆炸物检测（水晶/矿车）</h2>
 
-<h3>7.1 功能说明</h3>
-<p>该模块<strong>禁止在主世界使用末影水晶和 TNT 矿车</strong>——这两种实体可用于造成巨大爆炸破坏。检测分为两个层面：</p>
+  <h3>7.1 功能说明</h3>
+  <p>该模块<strong>禁止在主世界使用末影水晶和 TNT 矿车</strong>——这两种实体可用于造成巨大爆炸破坏。检测分为两个层面：</p>
 
-<table>
-  <tr><th>层面</th><th>机制</th><th>频率</th></tr>
-  <tr>
-    <td>嫌疑人追踪</td>
-    <td>检测水晶/矿车 8 格范围内的非信任玩家，标记 <code>explosive_suspicious + 1</code></td>
-    <td>每 tick</td>
-  </tr>
-  <tr>
-    <td>全局清理</td>
-    <td><strong>无条件杀死</strong>主世界中的所有末影水晶和 TNT 矿车</td>
-    <td>每 tick</td>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <th>层面</th>
+      <th>机制</th>
+      <th>频率</th>
+    </tr>
+    <tr>
+      <td>嫌疑人追踪</td>
+      <td>检测水晶/矿车 8 格范围内的非信任玩家，标记 <code>explosive_suspicious + 1</code></td>
+      <td>每 tick</td>
+    </tr>
+    <tr>
+      <td>全局清理</td>
+      <td><strong>无条件杀死</strong>主世界中的所有末影水晶和 TNT 矿车</td>
+      <td>每 tick</td>
+    </tr>
+  </table>
 
-<h3>7.2 警报格式</h3>
-<pre>[防爆警报] 有人试图在主世界放置末影水晶/TNT矿车！
+  <h3>7.2 警报格式</h3>
+  <pre>[防爆警报] 有人试图在主世界放置末影水晶/TNT矿车！
 嫌疑玩家: &lt;玩家ID&gt;</pre>
 
-<h3>7.3 豁免机制</h3>
-<p>拥有 <code>explosive_trusted</code> 标签的玩家<strong>不会被标记为嫌疑人</strong>，但他们放置的水晶/矿车<strong>仍然会被全局清理</strong>（因为清理是无条件的）。</p>
+  <h3>7.3 豁免机制</h3>
+  <p>拥有 <code>explosive_trusted</code> 标签的玩家<strong>不会被标记为嫌疑人</strong>，但他们放置的水晶/矿车<strong>仍然会被全局清理</strong>（因为清理是无条件的）。
+  </p>
 
-<div class="info">
-  <strong>💡 设计意图：</strong>如果管理员确实需要在主世界使用水晶/矿车，需要临时移除相关检测逻辑。目前数据包没有提供开关——这确保了最高安全级别。
-</div>
+  <div class="info">
+    <strong>💡 设计意图：</strong>如果管理员确实需要在主世界使用水晶/矿车，需要临时移除相关检测逻辑。目前数据包没有提供开关——这确保了最高安全级别。
+  </div>
 
-<h3>7.4 管理命令</h3>
-<table>
-  <tr><th>操作</th><th>命令</th></tr>
-  <tr><td>查看可疑爆炸玩家</td><td><code>/scoreboard players list @a[scores={explosive_suspicious=1..}]</code></td></tr>
-  <tr><td>清除某玩家嫌疑</td><td><code>/scoreboard players set &lt;玩家&gt; explosive_suspicious 0</code></td></tr>
-</table>
+  <h3>7.4 管理命令</h3>
+  <table>
+    <tr>
+      <th>操作</th>
+      <th>命令</th>
+    </tr>
+    <tr>
+      <td>查看可疑爆炸玩家</td>
+      <td><code>/scoreboard players list @a[scores={explosive_suspicious=1..}]</code></td>
+    </tr>
+    <tr>
+      <td>清除某玩家嫌疑</td>
+      <td><code>/scoreboard players set &lt;玩家&gt; explosive_suspicious 0</code></td>
+    </tr>
+  </table>
 
-<!-- ================================================================ -->
-<!-- 8. 周期警报 -->
-<!-- ================================================================ -->
-<h2 id="alerts">8. 周期警报系统</h2>
+  <!-- ================================================================ -->
+  <!-- 8. 周期警报 -->
+  <!-- ================================================================ -->
+  <h2 id="alerts">8. 周期警报系统</h2>
 
-<h3>8.1 时间线</h3>
-<div class="flow">
-  <span class="step">tick 0</span>
-  <span class="arrow">→</span>
-  <span class="step">loop=100 (5秒)</span>
-  <span class="arrow">→</span>
-  <span class="action">📢 OP 泄露警报</span>
-  <span class="arrow">→</span>
-  <span class="action">📢 防爆警报</span>
-  <span class="arrow">→</span>
-  <span class="step">loop=200 (10秒)</span>
-  <span class="arrow">→</span>
-  <span class="safe">🔄 loop 归零</span>
-</div>
+  <h3>8.1 时间线</h3>
+  <div class="flow">
+    <span class="step">tick 0</span>
+    <span class="arrow">→</span>
+    <span class="step">loop=100 (5秒)</span>
+    <span class="arrow">→</span>
+    <span class="action">📢 OP 泄露警报</span>
+    <span class="arrow">→</span>
+    <span class="action">📢 防爆警报</span>
+    <span class="arrow">→</span>
+    <span class="step">loop=200 (10秒)</span>
+    <span class="arrow">→</span>
+    <span class="safe">🔄 loop 归零</span>
+  </div>
 
-<h3>8.2 警报接收者</h3>
-<p>所有带有 <code>player</code> 标签的管理员会收到警报。带 <code>players</code> 但无 <code>player</code> 的管理员<strong>不会</strong>收到警报。</p>
+  <h3>8.2 警报接收者</h3>
+  <p>所有带有 <code>player</code> 标签的管理员会收到警报。</p>
 
-<h3>8.3 两种警报对比</h3>
-<table>
-  <tr><th>警报类型</th><th>触发条件</th><th>消息前缀</th><th>频率</th></tr>
-  <tr>
-    <td>OP 泄露警报</td>
-    <td>存在任何 <code>good=1</code> 的玩家</td>
-    <td><code>[op泄露警报]</code></td>
-    <td>约每 5 秒（只要存在嫌疑玩家就持续）</td>
-  </tr>
-  <tr>
-    <td>防爆警报</td>
-    <td>存在任何 <code>explosive_suspicious≥1</code> 的玩家</td>
-    <td><code>[防爆警报]</code></td>
-    <td>约每 5 秒（只要存在嫌疑玩家就持续）</td>
-  </tr>
-</table>
+  <h3>8.3 两种警报对比</h3>
+  <table>
+    <tr>
+      <th>警报类型</th>
+      <th>触发条件</th>
+      <th>消息前缀</th>
+      <th>频率</th>
+    </tr>
+    <tr>
+      <td>OP 泄露警报</td>
+      <td>存在任何 <code>good=1</code> 的玩家</td>
+      <td><code>[op泄露警报]</code></td>
+      <td>约每 5 秒（只要存在嫌疑玩家就持续）</td>
+    </tr>
+    <tr>
+      <td>防爆警报</td>
+      <td>存在任何 <code>explosive_suspicious≥1</code> 的玩家</td>
+      <td><code>[防爆警报]</code></td>
+      <td>约每 5 秒（只要存在嫌疑玩家就持续）</td>
+    </tr>
+  </table>
 
-<div class="tip">
-  <strong>✅ 停止警报的方法：</strong>清除对应计分板即可。<br>
-  OP 泄露 → <code>/scoreboard players set &lt;玩家&gt; good 0</code><br>
-  防爆 → <code>/scoreboard players set &lt;玩家&gt; explosive_suspicious 0</code>
-</div>
+  <div class="tip">
+    <strong>✅ 停止警报的方法：</strong>清除对应计分板即可。<br>
+    OP 泄露 → <code>/scoreboard players set &lt;玩家&gt; good 0</code><br>
+    防爆 → <code>/scoreboard players set &lt;玩家&gt; explosive_suspicious 0</code>
+  </div>
 
-<!-- ================================================================ -->
-<!-- 9. 嫌疑人持久记录 -->
-<!-- ================================================================ -->
-<h2 id="sus-record">9. 嫌疑人持久记录 <span style="color:#4ecca3;font-size:0.8rem;">NEW v1.2</span></h2>
+  <!-- ================================================================ -->
+  <!-- 9. 嫌疑人持久记录 -->
+  <!-- ================================================================ -->
+  <h2 id="sus-record">9. 嫌疑人持久记录 <span style="color:#4ecca3;font-size:0.8rem;">NEW v1.2</span></h2>
 
-<h3>9.1 解决的问题</h3>
-<p>旧版警报系统使用 <code>@a[tag=player]</code> 发送——<strong>管理员必须在线才能收到</strong>。如果管理员离线期间发生 OP 泄露或爆炸物事件，<strong>这些信息会永久丢失</strong>。</p>
-<p>现在，嫌疑人信息会被<strong>持久记录</strong>在计分板中（玩家离线也不会消失）。管理员一上线就会收到通知。</p>
+  <h3>9.1 解决的问题</h3>
+  <p>旧版警报系统使用 <code>@a[tag=player]</code> 发送——<strong>管理员必须在线才能收到</strong>。如果管理员离线期间发生 OP
+    泄露或爆炸物事件，<strong>这些信息会永久丢失</strong>。</p>
+  <p>现在，嫌疑人信息会被<strong>持久记录</strong>在计分板中（玩家离线也不会消失）。管理员一上线就会收到通知。</p>
 
-<h3>9.2 工作原理</h3>
-<div class="flow" style="text-align:left; line-height:2;">
-  <strong>① 首次检测到违规 → 双重标记：</strong><br>
-  <span style="margin-left:1.5em;"><code>good=1</code>（实时警报用，和以前一样）</span><br>
-  <span style="margin-left:1.5em;"><code>s_sus_op=1</code>（<strong>持久记录</strong>，玩家离线也保留）</span><br>
-  <span style="margin-left:1.5em;">同时计数器 <code>#suspicious s_sus_op</code> +1</span><br><br>
-  <strong>② 管理员上线 → 自动检测：</strong><br>
-  <span style="margin-left:1.5em;">每 tick 检查 <code>s_online</code> 状态变化</span><br>
-  <span style="margin-left:1.5em;">检测到管理员新上线 → 触发 <code>on_join</code> 函数</span><br><br>
-  <strong>③ 推送积压记录：</strong><br>
-  <span style="margin-left:1.5em;">检查计数器是否有积压 → 向管理员显示在线嫌疑人列表</span><br>
-  <span style="margin-left:1.5em;">提供可点击的 [查看详情] 和 [清除记录] 按钮</span><br><br>
-  <strong>④ 管理员处置后清除：</strong><br>
-  <span style="margin-left:1.5em;">运行 <code>/function rks_extra:suspicious_clear</code></span><br>
-  <span style="margin-left:1.5em;">使用 <code>*</code> 通配符清除所有玩家（含离线）的标记和计数器</span>
-</div>
+  <h3>9.2 工作原理</h3>
+  <div class="flow" style="text-align:left; line-height:2;">
+    <strong>① 首次检测到违规 → 双重标记：</strong><br>
+    <span style="margin-left:1.5em;"><code>good=1</code>（实时警报用，和以前一样）</span><br>
+    <span style="margin-left:1.5em;"><code>s_sus_op=1</code>（<strong>持久记录</strong>，玩家离线也保留）</span><br>
+    <span style="margin-left:1.5em;">同时计数器 <code>#suspicious s_sus_op</code> +1</span><br><br>
+    <strong>② 管理员上线 → 自动检测：</strong><br>
+    <span style="margin-left:1.5em;">每 tick 检查 <code>s_online</code> 状态变化</span><br>
+    <span style="margin-left:1.5em;">检测到管理员新上线 → 触发 <code>on_join</code> 函数</span><br><br>
+    <strong>③ 推送积压记录：</strong><br>
+    <span style="margin-left:1.5em;">检查计数器是否有积压 → 向管理员显示在线嫌疑人列表</span><br>
+    <span style="margin-left:1.5em;">提供可点击的 [查看详情] 和 [清除记录] 按钮</span><br><br>
+    <strong>④ 管理员处置后清除：</strong><br>
+    <span style="margin-left:1.5em;">运行 <code>/function rks_extra:suspicious_clear</code></span><br>
+    <span style="margin-left:1.5em;">使用 <code>*</code> 通配符清除所有玩家（含离线）的标记和计数器</span>
+  </div>
 
-<h3>9.3 上线通知示例</h3>
-<p>管理员上线后，如果存在积压记录，会看到：</p>
-<pre>[rks_extra] ⚠️ 自上次检查以来的嫌疑人记录：
+  <h3>9.3 上线通知示例</h3>
+  <p>管理员上线后，如果存在积压记录，会看到：</p>
+  <pre>[rks_extra] ⚠️ 自上次检查以来的嫌疑人记录：
   OP泄露: Player1, Player2
   爆炸物: Player3
 💡 使用 /function rks_extra:suspicious_list 查看详情  /function rks_extra:suspicious_clear 清除记录</pre>
 
-<div class="info">
-  <strong>💡 注意：</strong>上线通知中只显示<strong>当前在线</strong>的嫌疑人姓名。如果嫌疑人已离线，计数器仍会记录数量，但名字不会出现在通知中。离线嫌疑人的记录不会丢失——他们上线后会重新出现在 <code>suspicious_list</code> 中。
-</div>
+  <div class="info">
+    <strong>💡 注意：</strong>上线通知中只显示<strong>当前在线</strong>的嫌疑人姓名。如果嫌疑人已离线，计数器仍会记录数量，但名字不会出现在通知中。离线嫌疑人的记录不会丢失——他们上线后会重新出现在
+    <code>suspicious_list</code> 中。
+  </div>
 
-<h3>9.4 与实时警报的关系</h3>
-<table>
-  <tr><th>机制</th><th>触发时机</th><th>覆盖场景</th></tr>
-  <tr>
-    <td>实时警报（旧）</td>
-    <td>每 5 秒，管理员在线 + 嫌疑人在线</td>
-    <td>管理员正在服务器上时</td>
-  </tr>
-  <tr>
-    <td>持久记录（新）</td>
-    <td>管理员上线时，一次性推送</td>
-    <td>管理员离线期间发生的事件</td>
-  </tr>
-</table>
-<p>两者<strong>互补</strong>，不会重复。实时警报负责"正在发生"，持久记录负责"曾经发生"。</p>
+  <h3>9.4 与实时警报的关系</h3>
+  <table>
+    <tr>
+      <th>机制</th>
+      <th>触发时机</th>
+      <th>覆盖场景</th>
+    </tr>
+    <tr>
+      <td>实时警报（旧）</td>
+      <td>每 5 秒，管理员在线 + 嫌疑人在线</td>
+      <td>管理员正在服务器上时</td>
+    </tr>
+    <tr>
+      <td>持久记录（新）</td>
+      <td>管理员上线时，一次性推送</td>
+      <td>管理员离线期间发生的事件</td>
+    </tr>
+  </table>
+  <p>两者<strong>互补</strong>，不会重复。实时警报负责"正在发生"，持久记录负责"曾经发生"。</p>
 
-<h3>9.5 管理命令</h3>
-<table>
-  <tr><th>操作</th><th>命令</th><th>说明</th></tr>
-  <tr>
-    <td>查看嫌疑人记录</td>
-    <td><code>/function rks_extra:suspicious_list</code></td>
-    <td>显示在线嫌疑人的交互式列表（含清除按钮）</td>
-  </tr>
-  <tr>
-    <td>清除所有记录</td>
-    <td><code>/function rks_extra:suspicious_clear</code></td>
-    <td>清除所有（含离线）玩家和计数器，重置为干净状态</td>
-  </tr>
-  <tr>
-    <td>查看原始 OP 嫌疑数据</td>
-    <td><code>/scoreboard players list @a[scores={s_sus_op=1..}]</code></td>
-    <td>仅在线玩家</td>
-  </tr>
-  <tr>
-    <td>查看原始爆炸嫌疑数据</td>
-    <td><code>/scoreboard players list @a[scores={s_sus_exp=1..}]</code></td>
-    <td>仅在线玩家</td>
-  </tr>
-  <tr>
-    <td>查看嫌疑人计数</td>
-    <td><code>/scoreboard players get #suspicious s_sus_op</code><br><code>/scoreboard players get #suspicious s_sus_exp</code></td>
-    <td>显示累计检测次数（含已离线玩家）</td>
-  </tr>
-</table>
+  <h3>9.5 管理命令</h3>
+  <table>
+    <tr>
+      <th>操作</th>
+      <th>命令</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>查看嫌疑人记录</td>
+      <td><code>/function rks_extra:suspicious_list</code></td>
+      <td>显示在线嫌疑人的交互式列表（含清除按钮）</td>
+    </tr>
+    <tr>
+      <td>清除所有记录</td>
+      <td><code>/function rks_extra:suspicious_clear</code></td>
+      <td>清除所有（含离线）玩家和计数器，重置为干净状态</td>
+    </tr>
+    <tr>
+      <td>查看原始 OP 嫌疑数据</td>
+      <td><code>/scoreboard players list @a[scores={s_sus_op=1..}]</code></td>
+      <td>仅在线玩家</td>
+    </tr>
+    <tr>
+      <td>查看原始爆炸嫌疑数据</td>
+      <td><code>/scoreboard players list @a[scores={s_sus_exp=1..}]</code></td>
+      <td>仅在线玩家</td>
+    </tr>
+    <tr>
+      <td>查看嫌疑人计数</td>
+      <td>
+        <code>/scoreboard players get #suspicious s_sus_op</code><br><code>/scoreboard players get #suspicious s_sus_exp</code>
+      </td>
+      <td>显示累计检测次数（含已离线玩家）</td>
+    </tr>
+  </table>
 
-<h3>9.6 典型工作流</h3>
-<ol>
-  <li><strong>周末离线：</strong>玩家 A 在周六非法获得 OP → 被标记 <code>s_sus_op=1</code></li>
-  <li><strong>周一上线：</strong>管理员登录 → 立即看到通知「自上次检查以来的嫌疑人记录」</li>
-  <li><strong>查看详情：</strong>点击通知中的命令或手动运行 <code>/function rks_extra:suspicious_list</code></li>
-  <li><strong>处置：</strong>封禁玩家 A，运行 <code>/function rks_extra:suspicious_clear</code> 清空记录</li>
-</ol>
+  <h3>9.6 典型工作流</h3>
+  <ol>
+    <li><strong>周末离线：</strong>玩家 A 在周六非法获得 OP → 被标记 <code>s_sus_op=1</code></li>
+    <li><strong>周一上线：</strong>管理员登录 → 立即看到通知「自上次检查以来的嫌疑人记录」</li>
+    <li><strong>查看详情：</strong>点击通知中的命令或手动运行 <code>/function rks_extra:suspicious_list</code></li>
+    <li><strong>处置：</strong>封禁玩家 A，运行 <code>/function rks_extra:suspicious_clear</code> 清空记录</li>
+  </ol>
 
-<div class="tip">
-  <strong>✅ 最佳实践：</strong>每次处置完嫌疑人后，运行 <code>/function rks_extra:suspicious_clear</code> 清空记录。这样下次上线时如果又有通知，你就知道是<strong>新</strong>事件。
-</div>
+  <div class="tip">
+    <strong>✅ 最佳实践：</strong>每次处置完嫌疑人后，运行 <code>/function rks_extra:suspicious_clear</code>
+    清空记录。这样下次上线时如果又有通知，你就知道是<strong>新</strong>事件。
+  </div>
 
-<div class="warn">
-  <strong>⚠️ 注意：</strong>如果你上线后没有收到通知，但有玩家告诉你之前发生过可疑事件，手动运行 <code>/function rks_extra:suspicious_list</code> 即可查看——通知只在计数器 > 0 时发送，如果计数器因某种原因未更新（如旧版升级），手动查看仍然能看到 <code>s_sus_op=1</code> 的在线玩家。
-</div>
+  <div class="warn">
+    <strong>⚠️ 注意：</strong>如果你上线后没有收到通知，但有玩家告诉你之前发生过可疑事件，手动运行 <code>/function rks_extra:suspicious_list</code>
+    即可查看——通知只在计数器 > 0 时发送，如果计数器因某种原因未更新（如旧版升级），手动查看仍然能看到 <code>s_sus_op=1</code> 的在线玩家。
+  </div>
 
-<!-- ================================================================ -->
-<!-- 10. 计分板参考 -->
-<!-- ================================================================ -->
-<h2 id="scoreboards">10. 计分板参考</h2>
+  <!-- ================================================================ -->
+  <!-- 10. 计分板参考 -->
+  <!-- ================================================================ -->
+  <h2 id="scoreboards">10. 计分板参考</h2>
 
-<table>
-  <tr><th>名称</th><th>类型</th><th>挂载目标</th><th>真实含义</th></tr>
-  <tr>
-    <td><code>good</code></td>
-    <td>dummy</td>
-    <td>嫌疑玩家</td>
-    <td>OP 泄露嫌疑标记。1 = 已被抓获。</td>
-  </tr>
-  <tr>
-    <td><code>s_joined</code></td>
-    <td>dummy</td>
-    <td>所有玩家</td>
-    <td>玩家初始化标记。1 = 已初始化记分板。</td>
-  </tr>
-  <tr>
-    <td><code>loop</code></td>
-    <td>dummy</td>
-    <td><code>#Global</code></td>
-    <td>全局 tick 计数器，0→200→归零 循环。</td>
-  </tr>
-  <tr>
-    <td><code>tnt_used</code></td>
-    <td>minecraft.used</td>
-    <td>所有玩家</td>
-    <td>原生 TNT 放置统计，每放置 1 个自动 +1。</td>
-  </tr>
-  <tr>
-    <td><code>tnt_prev</code></td>
-    <td>dummy</td>
-    <td>所有玩家</td>
-    <td>上次 tnt_used 快照，用于比较检测新放置。</td>
-  </tr>
-  <tr>
-    <td><code>tnt_count</code></td>
-    <td>dummy</td>
-    <td>所有玩家</td>
-    <td>当前周期 TNT 已用数。≥2 触发没收。</td>
-  </tr>
-  <tr>
-    <td><code>tnt_timer</code></td>
-    <td>dummy</td>
-    <td><code>#Global</code></td>
-    <td>全局 TNT 周期计时器，1200 tick 触发重置。</td>
-  </tr>
-  <tr>
-    <td><code>tnt_restrained</code></td>
-    <td>dummy</td>
-    <td>所有玩家</td>
-    <td>本周期是否已被没收过。1 = 已限制。</td>
-  </tr>
-  <tr>
-    <td><code>tnt_return_cd</code></td>
-    <td>dummy</td>
-    <td>所有玩家</td>
-    <td>归还 TNT 冷却倒计时：2→1→0（归还）→-1（停止）。</td>
-  </tr>
-  <tr>
-    <td><code>explosive_suspicious</code></td>
-    <td>dummy</td>
-    <td>嫌疑玩家</td>
-    <td>水晶/矿车放置嫌疑计数。≥1 触发防爆警报。</td>
-  </tr>
-  <tr>
-    <td><code>tnt_free_idx</code></td>
-    <td>dummy</td>
-    <td><code>#tnt_free_idx</code></td>
-    <td>防爆区遍历索引（内部使用）。</td>
-  </tr>
-  <tr>
-    <td><code>calc</code></td>
-    <td>dummy</td>
-    <td><code>#_cx</code> 等假玩家</td>
-    <td>中间计算用（内部使用）。</td>
-  </tr>
-  <tr>
-    <td><code>s_online</code> <span style="color:#4ecca3;">NEW</span></td>
-    <td>dummy</td>
-    <td>所有玩家</td>
-    <td>在线状态追踪。1 = 上一 tick 在线。用于检测玩家上线/重新上线。</td>
-  </tr>
-  <tr>
-    <td><code>s_sus_op</code> <span style="color:#4ecca3;">NEW</span></td>
-    <td>dummy</td>
-    <td>嫌疑玩家</td>
-    <td>OP 泄露<strong>持久</strong>标记。1 = 曾检测到 OP 泄露。离线不消失，由管理员手动清除。</td>
-  </tr>
-  <tr>
-    <td><code>s_sus_exp</code> <span style="color:#4ecca3;">NEW</span></td>
-    <td>dummy</td>
-    <td>嫌疑玩家</td>
-    <td>爆炸物<strong>持久</strong>标记。1 = 曾检测到水晶/矿车放置。离线不消失，由管理员手动清除。</td>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <th>名称</th>
+      <th>类型</th>
+      <th>挂载目标</th>
+      <th>真实含义</th>
+    </tr>
+    <tr>
+      <td><code>good</code></td>
+      <td>dummy</td>
+      <td>嫌疑玩家</td>
+      <td>OP 泄露嫌疑标记。1 = 已被抓获。</td>
+    </tr>
+    <tr>
+      <td><code>s_joined</code></td>
+      <td>dummy</td>
+      <td>所有玩家</td>
+      <td>玩家初始化标记。1 = 已初始化记分板。</td>
+    </tr>
+    <tr>
+      <td><code>loop</code></td>
+      <td>dummy</td>
+      <td><code>#Global</code></td>
+      <td>全局 tick 计数器，0→200→归零 循环。</td>
+    </tr>
+    <tr>
+      <td><code>tnt_used</code></td>
+      <td>minecraft.used</td>
+      <td>所有玩家</td>
+      <td>原生 TNT 放置统计，每放置 1 个自动 +1。</td>
+    </tr>
+    <tr>
+      <td><code>tnt_prev</code></td>
+      <td>dummy</td>
+      <td>所有玩家</td>
+      <td>上次 tnt_used 快照，用于比较检测新放置。</td>
+    </tr>
+    <tr>
+      <td><code>tnt_count</code></td>
+      <td>dummy</td>
+      <td>所有玩家</td>
+      <td>当前周期 TNT 已用数。≥2 触发没收。</td>
+    </tr>
+    <tr>
+      <td><code>tnt_timer</code></td>
+      <td>dummy</td>
+      <td><code>#Global</code></td>
+      <td>全局 TNT 周期计时器，1200 tick 触发重置。</td>
+    </tr>
+    <tr>
+      <td><code>tnt_restrained</code></td>
+      <td>dummy</td>
+      <td>所有玩家</td>
+      <td>本周期是否已被没收过。1 = 已限制。</td>
+    </tr>
+    <tr>
+      <td><code>tnt_return_cd</code></td>
+      <td>dummy</td>
+      <td>所有玩家</td>
+      <td>归还 TNT 冷却倒计时：2→1→0（归还）→-1（停止）。</td>
+    </tr>
+    <tr>
+      <td><code>explosive_suspicious</code></td>
+      <td>dummy</td>
+      <td>嫌疑玩家</td>
+      <td>水晶/矿车放置嫌疑计数。≥1 触发防爆警报。</td>
+    </tr>
+    <tr>
+      <td><code>tnt_free_idx</code></td>
+      <td>dummy</td>
+      <td><code>#tnt_free_idx</code></td>
+      <td>防爆区遍历索引（内部使用）。</td>
+    </tr>
+    <tr>
+      <td><code>calc</code></td>
+      <td>dummy</td>
+      <td><code>#_cx</code> 等假玩家</td>
+      <td>中间计算用（内部使用）。</td>
+    </tr>
+    <tr>
+      <td><code>s_online</code> <span style="color:#4ecca3;">NEW</span></td>
+      <td>dummy</td>
+      <td>所有玩家</td>
+      <td>在线状态追踪。1 = 上一 tick 在线。用于检测玩家上线/重新上线。</td>
+    </tr>
+    <tr>
+      <td><code>s_sus_op</code> <span style="color:#4ecca3;">NEW</span></td>
+      <td>dummy</td>
+      <td>嫌疑玩家</td>
+      <td>OP 泄露<strong>持久</strong>标记。1 = 曾检测到 OP 泄露。离线不消失，由管理员手动清除。</td>
+    </tr>
+    <tr>
+      <td><code>s_sus_exp</code> <span style="color:#4ecca3;">NEW</span></td>
+      <td>dummy</td>
+      <td>嫌疑玩家</td>
+      <td>爆炸物<strong>持久</strong>标记。1 = 曾检测到水晶/矿车放置。离线不消失，由管理员手动清除。</td>
+    </tr>
+  </table>
 
-<!-- ================================================================ -->
-<!-- 11. 排错指南 -->
-<!-- ================================================================ -->
-<h2 id="troubleshoot">11. 排错指南</h2>
+  <!-- ================================================================ -->
+  <!-- 11. 排错指南 -->
+  <!-- ================================================================ -->
+  <h2 id="troubleshoot">11. 排错指南</h2>
 
-<h3>Q: 我自己触发了 OP 泄露警报</h3>
-<p>你忘了给自己打标签，或者只打了一个。执行：</p>
-<pre>/tag &lt;你的ID&gt; add player
-/tag &lt;你的ID&gt; add players
+  <h3>Q: 我自己触发了 OP 泄露警报</h3>
+  <p>你忘了给自己打标签，或者只打了一个。执行：</p>
+  <pre>/tag &lt;你的ID&gt; add player
 /scoreboard players set &lt;你的ID&gt; good 0</pre>
 
-<h3>Q: 警报一直在刷屏</h3>
-<p>说明有嫌疑玩家未被处理。先定位：</p>
-<pre>/scoreboard players list @a[scores={good=1}]</pre>
-<p>处置后清除标记即可停止警报。</p>
+  <h3>Q: 警报一直在刷屏</h3>
+  <p>说明有嫌疑玩家未被处理。先定位：</p>
+  <pre>/scoreboard players list @a[scores={good=1}]</pre>
+  <p>处置后清除标记即可停止警报。</p>
 
-<h3>Q: 玩家反映 TNT 被吞了</h3>
-<p>正常行为——玩家在 60 秒内放了第 2 个 TNT，第一个保留，第二个被没收但 2 tick 后归还。如果玩家持续被吞 TNT，检查：</p>
-<ul>
-  <li>该玩家是否有 <code>explosive_trusted</code> 标签？如果没有，他们就是被限制了。</li>
-  <li>是否 60 秒重置周期还没到？可以用 <code>/function rks_extra:tnt_off</code> 手动重置。</li>
-</ul>
+  <h3>Q: 玩家反映 TNT 被吞了</h3>
+  <p>正常行为——玩家在 60 秒内放了第 2 个 TNT，第一个保留，第二个被没收但 2 tick 后归还。如果玩家持续被吞 TNT，检查：</p>
+  <ul>
+    <li>该玩家是否有 <code>explosive_trusted</code> 标签？如果没有，他们就是被限制了。</li>
+    <li>是否 60 秒重置周期还没到？可以用 <code>/function rks_extra:tnt_off</code> 手动重置。</li>
+  </ul>
 
-<h3>Q: 防爆区不生效</h3>
-<ul>
-  <li>确认区域在<strong>主世界</strong>（防爆区仅主世界有效）。</li>
-  <li>用 <code>/function rks_extra:tnt_free_area/list</code> 检查区域是否正确。</li>
-  <li>确认是<strong>实体 TNT</strong>（已点燃的），而非 TNT 方块。数据包只清除实体 TNT。</li>
-</ul>
+  <h3>Q: 防爆区不生效</h3>
+  <ul>
+    <li>确认区域在<strong>主世界</strong>（防爆区仅主世界有效）。</li>
+    <li>用 <code>/function rks_extra:tnt_free_area/list</code> 检查区域是否正确。</li>
+    <li>确认是<strong>实体 TNT</strong>（已点燃的），而非 TNT 方块。数据包只清除实体 TNT。</li>
+  </ul>
 
-<h3>Q: /reload 后防爆区丢失</h3>
-<p>不会丢失。区域数据存储在 <code>storage</code> 中，<code>/reload</code> 会保留。只有 <code>clear</code> 命令或卸载数据包才会清除。如果使用 <code>init</code> 覆盖了你的自定义配置，那是你自己调用了 init 函数。</p>
+  <h3>Q: /reload 后防爆区丢失</h3>
+  <p>不会丢失。区域数据存储在 <code>storage</code> 中，<code>/reload</code> 会保留。只有 <code>clear</code> 命令或卸载数据包才会清除。如果使用
+    <code>init</code> 覆盖了你的自定义配置，那是你自己调用了 init 函数。
+  </p>
 
-<h3>Q: 如何彻底关闭某个模块</h3>
-<p>数据包目前没有配置开关。如需关闭某模块，需直接编辑 <code>tick.mcfunction</code> 注释掉对应行：</p>
-<ul>
-  <li>关闭 OP 检测 → 注释 <code>function rks_extra:detect</code> 行</li>
-  <li>关闭 TNT 管控 → 注释 TNT 相关 5 行</li>
-  <li>关闭防爆区 → 注释 <code>function rks_extra:tnt_free_area</code> 行</li>
-  <li>关闭爆炸物检测 → 注释水晶/矿车检测和清理行</li>
-</ul>
+  <h3>Q: 如何彻底关闭某个模块</h3>
+  <p>数据包目前没有配置开关。如需关闭某模块，需直接编辑 <code>tick.mcfunction</code> 注释掉对应行：</p>
+  <ul>
+    <li>关闭 OP 检测 → 注释 <code>function rks_extra:detect</code> 行</li>
+    <li>关闭 TNT 管控 → 注释 TNT 相关 5 行</li>
+    <li>关闭防爆区 → 注释 <code>function rks_extra:tnt_free_area</code> 行</li>
+    <li>关闭爆炸物检测 → 注释水晶/矿车检测和清理行</li>
+  </ul>
 
-<h3>Q: 管理员上线没有收到嫌疑人通知</h3>
-<ul>
-  <li>确认计数器归零：<code>/scoreboard players get #suspicious s_sus_op</code> 和 <code>s_sus_exp</code> 都为 0 表示没有积压。</li>
-  <li>确认你有 <code>player</code> 标签：只有带此标签的管理员才会收到通知。</li>
-  <li>手动查看：运行 <code>/function rks_extra:suspicious_list</code> 随时查看记录。</li>
-  <li>如果是旧版升级到新版，之前的数据没有 <code>s_sus_op</code> / <code>s_sus_exp</code> 标记，需要等新事件触发才会记录。</li>
-</ul>
+  <h3>Q: 管理员上线没有收到嫌疑人通知</h3>
+  <ul>
+    <li>确认计数器归零：<code>/scoreboard players get #suspicious s_sus_op</code> 和 <code>s_sus_exp</code> 都为 0 表示没有积压。</li>
+    <li>确认你有 <code>player</code> 标签：只有带此标签的管理员才会收到通知。</li>
+    <li>手动查看：运行 <code>/function rks_extra:suspicious_list</code> 随时查看记录。</li>
+    <li>如果是旧版升级到新版，之前的数据没有 <code>s_sus_op</code> / <code>s_sus_exp</code> 标记，需要等新事件触发才会记录。</li>
+  </ul>
 
-<h3>Q: suspicious_list 显示的嫌疑人比我预期的少</h3>
-<p><code>suspicious_list</code> 使用 <code>@a</code> 选择器，只能显示<strong>当前在线</strong>的嫌疑人。已离线的嫌疑人虽然记录保留在计分板中，但无法通过 tellraw 显示名字。检查计数器可确认总数：</p>
-<pre>/scoreboard players get #suspicious s_sus_op
+  <h3>Q: suspicious_list 显示的嫌疑人比我预期的少</h3>
+  <p><code>suspicious_list</code> 使用 <code>@a</code> 选择器，只能显示<strong>当前在线</strong>的嫌疑人。已离线的嫌疑人虽然记录保留在计分板中，但无法通过 tellraw
+    显示名字。检查计数器可确认总数：</p>
+  <pre>/scoreboard players get #suspicious s_sus_op
 /scoreboard players get #suspicious s_sus_exp</pre>
 
-<hr>
-<p style="text-align:center; color:var(--text-dim); font-size:0.8rem;">
-  📦 rks_security-26.2 · 命名空间 rks_extra · 内部文档
-</p>
+  <!-- ================================================================ -->
+  <!-- 12. 管理员面板 -->
+  <!-- ================================================================ -->
+  <h2 id="admin-panel">12. 管理员面板 <span style="color:#4ecca3;font-size:0.8rem;">NEW v2.1</span></h2>
+
+  <p>管理员面板是一个<strong>图形化交互式管理工具</strong>，让您无需记忆命令即可完成日常管理操作。</p>
+
+  <h3>12.1 获取面板</h3>
+  <p>首先确保你有 <code>player</code> 标签，然后执行：</p>
+  <pre>/function rks_extra:admin_panel/give</pre>
+  <p>你会获得一个名为<strong>「管理员面板」</strong>的胡萝卜钓竿。手持它<strong>右键点击</strong>即可打开管理菜单。</p>
+
+  <div class="tip">
+    <strong>✅ 提示：</strong>只有带有 <code>player</code> 标签的管理员才能打开面板。普通玩家右键无任何反应。面板物品可以放进末影箱随身携带，死亡不掉落。
+  </div>
+
+  <h3>12.2 主菜单</h3>
+  <p>右键打开面板后，你会看到 5 个功能入口：</p>
+
+  <table>
+    <tr>
+      <th>按钮</th>
+      <th>功能</th>
+      <th>说明</th>
+    </tr>
+    <tr>
+      <td>📊 系统状态</td>
+      <td>实时数据看板</td>
+      <td>查看在线管理员、嫌疑人计数、TNT 计时器等</td>
+    </tr>
+    <tr>
+      <td>📋 嫌疑人记录</td>
+      <td>嫌疑人管理</td>
+      <td>查看 OP 泄露/爆炸嫌疑人、一键清除记录</td>
+    </tr>
+    <tr>
+      <td>🏗️ 防爆区管理</td>
+      <td>防爆区 CRUD</td>
+      <td>查看/添加/清空/恢复防爆区</td>
+    </tr>
+    <tr>
+      <td>💣 TNT 管控</td>
+      <td>TNT 用量控制</td>
+      <td>查看计时器和受限制玩家、手动全局重置</td>
+    </tr>
+    <tr>
+      <td>👤 玩家标签</td>
+      <td>标签管理</td>
+      <td>查看管理员和爆炸信任玩家、添加/移除命令提示</td>
+    </tr>
+  </table>
+
+  <h3>12.3 子菜单操作</h3>
+
+  <h4>📊 系统状态</h4>
+  <p>显示实时数据：在线管理员列表、OP 嫌疑人数量与在线名单、爆炸嫌疑人数量与在线名单、TNT 全局计时器进度。点击 <strong>[🔄 刷新]</strong> 可更新数据。</p>
+
+  <h4>📋 嫌疑人记录</h4>
+  <p>显示两大类嫌疑人的计数和在线名单。提供三个操作按钮：</p>
+  <ul>
+    <li><strong>[👁 查看 OP 嫌疑]</strong> — 在侧边栏显示 OP 嫌疑人列表（5 秒后自动恢复）</li>
+    <li><strong>[👁 查看爆炸嫌疑]</strong> — 在侧边栏显示爆炸嫌疑人列表</li>
+    <li><strong>[🗑 清除所有记录]</strong> — 一键清除所有嫌疑人的持久记录和计数器</li>
+    <li><strong>[🔄 清除OP泄露标记]</strong> — 将所有在线玩家的 <code>good</code> 分数重置为 0，停止 OP 泄露警报</li>
+  </ul>
+
+  <h4>🏗️ 防爆区管理</h4>
+  <p>提供防爆区的日常管理操作：</p>
+  <ul>
+    <li><strong>[📋 查看所有防爆区]</strong> — 在聊天栏列出所有防爆区（含名称和坐标范围）</li>
+    <li><strong>[➕ 添加防爆区]</strong> — 将命令模板填入聊天栏，填入坐标和名称后回车执行</li>
+    <li><strong>[🔄 恢复默认区域]</strong> — 重置为首次加载时的 5 个默认防爆区</li>
+    <li><strong>[🗑 清空所有区域]</strong> — 确认后清空所有防爆区（建议先备份）</li>
+  </ul>
+  <div class="warn">
+    <strong>⚠️ 注意：</strong>删除单个防爆区需要通过命令完成。先用「查看所有防爆区」获得序号，再执行
+    <code>/function rks_extra:tnt_free_area/remove {index:&lt;序号&gt;}</code>。
+  </div>
+
+  <h4>💣 TNT 管控</h4>
+  <p>显示 TNT 全局计时器进度和当前已受限制的玩家列表。提供 <strong>[🔄 手动全局重置]</strong> 按钮，立即将所有玩家的 TNT 计数归零（等价于
+    <code>/function rks_extra:tnt_off</code>）。
+  </p>
+
+  <h4>👤 玩家标签管理</h4>
+  <p>分为两个区域：</p>
+  <ul>
+    <li><strong>管理员 (player)：</strong>显示在线管理员列表，以及添加/移除的 <code>/tag</code> 命令提示。</li>
+    <li><strong>爆炸信任 (explosive_trusted)：</strong>显示在线爆炸信任玩家列表，以及添加/移除的命令提示。信任玩家不受 TNT 数量限制且不会被标记为爆炸嫌疑人。</li>
+  </ul>
+
+  <h3>12.4 技术原理</h3>
+  <p>管理员面板通过以下机制实现：</p>
+  <ul>
+    <li><strong>物品：</strong>胡萝卜钓竿（自定义名称「管理员面板」），利用 <code>minecraft.used:minecraft.carrot_on_a_stick</code> 统计检测右键</li>
+    <li><strong>检测：</strong>每 tick 比对 <code>ap_used</code>（原生统计）与 <code>ap_prev</code>（快照），变化则触发菜单</li>
+    <li><strong>权限：</strong>仅 <code>@a[tag=player]</code> 的管理员可触发，其他人右键无响应</li>
+    <li><strong>菜单：</strong>tellraw + <code>run_command</code> 点击事件，点即执行，无需二次确认</li>
+  </ul>
+
+  <div class="info">
+    <strong>💡 设计意图：</strong>面板将所有常用管理操作集中在单一入口，大幅降低管理门槛——新管理员只需获得面板物品，无需记忆任何命令即可完成嫌疑人查看、记录清除、防爆区管理、TNT 重置等核心操作。
+  </div>
+
+  <hr>
+  <p style="text-align:center; color:var(--text-dim); font-size:0.8rem;">
+    📦 rks_security-26.2 · 命名空间 rks_extra · 内部文档
+  </p>
 
 </body>
+
 </html>

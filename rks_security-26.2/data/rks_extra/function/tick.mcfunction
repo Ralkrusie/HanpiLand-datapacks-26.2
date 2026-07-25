@@ -67,3 +67,7 @@ execute as @a[scores={ra_return_cd=0}] run function rks_extra:ra_return
 # === 更新在线状态（最后执行，用于下一tick的上线检测）===
 scoreboard players set * s_online 0
 scoreboard players set @a s_online 1
+
+# === 管理员面板右键检测 ===
+execute as @a[tag=player] if score @s ap_used > @s ap_prev run function rks_extra:admin_panel/open
+execute as @a[tag=player] run scoreboard players operation @s ap_prev = @s ap_used

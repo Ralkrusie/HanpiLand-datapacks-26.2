@@ -1,0 +1,6 @@
+tellraw @s [{text:"\n===== 👤 玩家标签管理 =====\n",color:"gold",bold:true}]
+tellraw @s [{text:"管理员 (player): ",color:"gray"},{selector:"@a[tag=player]",color:"green",separator:{text:", ",color:"gray"}}]
+tellraw @s [{text:"💡 添加: /tag <玩家ID> add player  移除: /tag <玩家ID> remove player",color:"gray",italic:true}]
+tellraw @s [{text:"\n爆炸信任 (explosive_trusted): ",color:"gray"},{selector:"@a[tag=explosive_trusted]",color:"gold",separator:{text:", ",color:"gray"}}]
+tellraw @s [{text:"💡 添加: /tag <玩家ID> add explosive_trusted  移除: /tag <玩家ID> remove explosive_trusted",color:"gray",italic:true}]
+tellraw @s [{text:"\n  [↩ 返回]  ",color:"gold",click_event:{action:"run_command",command:"function rks_extra:admin_panel/open"}}]

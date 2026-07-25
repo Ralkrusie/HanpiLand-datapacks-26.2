@@ -1,0 +1,8 @@
+tellraw @s [{text:"\n===== 📋 嫌疑人记录 =====\n",color:"gold",bold:true}]
+tellraw @s [{text:"OP 嫌疑人(",color:"gray"},{score:{name:"#suspicious",objective:"s_sus_op"},color:"red"},{text:"): ",color:"gray"},{selector:"@a[scores={s_sus_op=1}]",color:"red",separator:{text:", ",color:"gray"}}]
+tellraw @s [{text:"爆炸嫌疑人(",color:"gray"},{score:{name:"#suspicious",objective:"s_sus_exp"},color:"red"},{text:"): ",color:"gray"},{selector:"@a[scores={s_sus_exp=1}]",color:"red",separator:{text:", ",color:"gray"}}]
+tellraw @s [{text:"\n  [👁 查看 OP 嫌疑]  ",color:"aqua",click_event:{action:"run_command",command:"function rks_extra:sus_list_op"}}]
+tellraw @s [{text:"  [👁 查看爆炸嫌疑]  ",color:"aqua",click_event:{action:"run_command",command:"function rks_extra:sus_list_exp"}}]
+tellraw @s [{text:"  [🗑 清除所有记录]  ",color:"dark_red",click_event:{action:"run_command",command:"function rks_extra:suspicious_clear"}}]
+tellraw @s [{text:"  [🔄 清除OP泄露标记]  ",color:"yellow",click_event:{action:"run_command",command:"function rks_extra:sus_reset_good"}}]
+tellraw @s [{text:"  [↩ 返回]  ",color:"gold",click_event:{action:"run_command",command:"function rks_extra:admin_panel/open"}}]
