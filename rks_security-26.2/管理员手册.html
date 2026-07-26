@@ -272,7 +272,7 @@
       <li><a href="#sus-record">嫌疑人持久记录（新）</a></li>
       <li><a href="#scoreboards">计分板参考</a></li>
       <li><a href="#troubleshoot">排错指南</a></li>
-      <li><a href="#admin-panel">管理员面板 <span style="color:#4ecca3;">NEW v2.1</span></a></li>
+      <li><a href="#admin-panel">服务器安全管理员面板 <span style="color:#4ecca3;">NEW v2.1</span></a></li>
     </ol>
   </details>
 
@@ -315,7 +315,7 @@
       <td>每 tick 检测 8 格内放置者 + 全局清理</td>
     </tr>
     <tr>
-      <td>🎛️ 管理员面板 <span style="color:#4ecca3;">NEW v2.1</span></td>
+      <td>🎛️ 服务器安全管理员面板 <span style="color:#4ecca3;">NEW v2.1</span></td>
       <td>一键式图形化管理界面，替代纯命令操作</td>
       <td>胡萝卜钓竿右键触发 + tellraw 交互按钮</td>
     </tr>
@@ -1063,16 +1063,16 @@
 /scoreboard players get #suspicious s_sus_exp</pre>
 
   <!-- ================================================================ -->
-  <!-- 12. 管理员面板 -->
+  <!-- 12. 服务器安全管理员面板 -->
   <!-- ================================================================ -->
-  <h2 id="admin-panel">12. 管理员面板 <span style="color:#4ecca3;font-size:0.8rem;">NEW v2.1</span></h2>
+  <h2 id="admin-panel">12. 服务器安全管理员面板 <span style="color:#4ecca3;font-size:0.8rem;">NEW v2.1</span></h2>
 
-  <p>管理员面板是一个<strong>图形化交互式管理工具</strong>，让您无需记忆命令即可完成日常管理操作。</p>
+  <p>服务器安全管理员面板是一个<strong>图形化交互式管理工具</strong>，让您无需记忆命令即可完成日常管理操作。</p>
 
   <h3>12.1 获取面板</h3>
   <p>首先确保你有 <code>player</code> 标签，然后执行：</p>
   <pre>/function rks_extra:admin_panel/give</pre>
-  <p>你会获得一个名为<strong>「管理员面板」</strong>的胡萝卜钓竿。手持它<strong>右键点击</strong>即可打开管理菜单。</p>
+  <p>你会获得一个名为<strong>「服务器安全管理员面板」</strong>的胡萝卜钓竿。手持它<strong>右键点击</strong>即可打开管理菜单。</p>
 
   <div class="tip">
     <strong>✅ 提示：</strong>只有带有 <code>player</code> 标签的管理员才能打开面板。普通玩家右键无任何反应。面板物品可以放进末影箱随身携带，死亡不掉落。
@@ -1154,9 +1154,9 @@
   </ul>
 
   <h3>12.4 技术原理</h3>
-  <p>管理员面板通过以下机制实现：</p>
+  <p>服务器安全管理员面板通过以下机制实现：</p>
   <ul>
-    <li><strong>物品：</strong>胡萝卜钓竿（自定义名称「管理员面板」），利用 <code>minecraft.used:minecraft.carrot_on_a_stick</code> 统计检测右键</li>
+    <li><strong>物品：</strong>胡萝卜钓竿（自定义名称「服务器安全管理员面板」），利用 <code>minecraft.used:minecraft.carrot_on_a_stick</code> 统计检测右键</li>
     <li><strong>检测：</strong>每 tick 比对 <code>ap_used</code>（原生统计）与 <code>ap_prev</code>（快照），变化则触发菜单</li>
     <li><strong>权限：</strong>仅 <code>@a[tag=player]</code> 的管理员可触发，其他人右键无响应</li>
     <li><strong>菜单：</strong>tellraw + <code>run_command</code> 点击事件，点即执行，无需二次确认</li>

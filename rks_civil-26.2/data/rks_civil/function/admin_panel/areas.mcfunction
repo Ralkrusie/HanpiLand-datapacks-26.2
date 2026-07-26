@@ -1,0 +1,6 @@
+tellraw @s [{text:"\n===== 🏙️ 区域管理 =====\n",color:"gold",bold:true}]
+tellraw @s [{text:"  [📋 查看所有区域]  ",color:"aqua",click_event:{action:"run_command",command:"function rks_civil:area/list"}}]
+tellraw @s [{text:"  [➕ 添加区域]  ",color:"green",click_event:{action:"suggest_command",command:"/function rks_civil:area/add {x:,y:,z:,dx:,dy:,dz:,name:\"\",subtitle:\"\",color:\"\",id:\"\",dimension:\"minecraft:overworld\"}"}}]
+tellraw @s [{text:"  [🗑 删除区域]  ",color:"dark_red",click_event:{action:"suggest_command",command:"/function rks_civil:area/remove {index:}"}}]
+tellraw @s [{text:"\n  [↩ 返回]  ",color:"gold",click_event:{action:"run_command",command:"function rks_civil:admin_panel/open"}}]
+tellraw @s [{text:"\n💡 添加区域: 点击按钮后填入坐标和名称\n   删除区域: 先查看列表获得序号, 再执行删除",color:"gray",italic:true}]

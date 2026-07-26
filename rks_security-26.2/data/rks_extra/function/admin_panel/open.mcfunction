@@ -1,4 +1,4 @@
-tellraw @s [{text:"\n===== 🛡️ 管理员面板 =====\n",color:"gold",bold:true}]
+tellraw @s [{text:"\n===== 🛡️ 服务器安全管理员面板 =====\n",color:"gold",bold:true}]
 tellraw @s [{text:"  [📊 系统状态]  ",color:"aqua",click_event:{action:"run_command",command:"function rks_extra:admin_panel/dashboard"}},{text:"\n"}]
 tellraw @s [{text:"  [📋 嫌疑人记录]  ",color:"aqua",click_event:{action:"run_command",command:"function rks_extra:admin_panel/suspects"}},{text:"\n"}]
 tellraw @s [{text:"  [🏗️ 防爆区管理]  ",color:"aqua",click_event:{action:"run_command",command:"function rks_extra:admin_panel/tnt_free"}},{text:"\n"}]

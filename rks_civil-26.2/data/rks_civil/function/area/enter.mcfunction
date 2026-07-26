@@ -1,17 +1,9 @@
 # ============================================
 # rks_civil - 进入区域提示
-# 根据 #this_area 的值显示对应区域的标题
-# 执行上下文：@s = 触发玩家
+# 从 storage 读取当前区域数据，显示 title
+# 执行上下文：@s = 触发玩家, #this_area = 区域编号
 # ============================================
 
-# --- 区域 0: 雪豹小镇 ---
-execute if score #this_area rks_civil_area_id matches 0 run title @s title {"text":"雪豹小镇","color":"gold","bold":true}
-execute if score #this_area rks_civil_area_id matches 0 run title @s subtitle {"text":"北境雪原上的明珠","color":"gray","italic":true}
-execute if score #this_area rks_civil_area_id matches 0 run title @s times 10 60 20
-
-# --- 区域 1: 港口区 ---
-execute if score #this_area rks_civil_area_id matches 1 run title @s title {"text":"港口区","color":"aqua","bold":true}
-execute if score #this_area rks_civil_area_id matches 1 run title @s subtitle {"text":"咸咸的海风扑面而来","color":"gray","italic":true}
-execute if score #this_area rks_civil_area_id matches 1 run title @s times 10 60 20
-
-# --- 在此处添加更多区域的标题显示... ---
+# 导出区域编号到 storage，先合并数据再显示
+execute store result storage rks_civil:main _enter.i int 1 run scoreboard players get #this_area rks_civil_area_id
+function rks_civil:area/enter_prep with storage rks_civil:main _enter

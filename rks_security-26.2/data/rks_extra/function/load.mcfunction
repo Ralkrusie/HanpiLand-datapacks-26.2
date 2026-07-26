@@ -1,4 +1,4 @@
-tellraw @a {text:"已加载rks_extra数据包v2.1",color:"yellow"}
+tellraw @a {text:"已加载rks_extra数据包for 26.2+, v2.1",color:"yellow"}
 scoreboard objectives add s_joined dummy
 scoreboard objectives add good dummy
 scoreboard objectives add loop dummy
@@ -15,9 +15,9 @@ scoreboard objectives add calc dummy
 
 scoreboard objectives add ra_return_cd dummy
 
-# === 管理员面板 ===
-scoreboard objectives add ap_used minecraft.used:minecraft.carrot_on_a_stick
-scoreboard objectives add ap_prev dummy
+# === 服务器安全管理员面板 ===
+scoreboard objectives add extra_ap_used minecraft.used:minecraft.carrot_on_a_stick
+scoreboard objectives add extra_ap_prev dummy
 
 # === 嫌疑人持久记录系统 ===
 scoreboard objectives add s_online dummy
