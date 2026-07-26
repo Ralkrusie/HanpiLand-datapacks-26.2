@@ -1,1 +1,0 @@
-summon wandering_trader ~ ~ ~ { CustomName:"巴巴博弈", CustomNameVisible:true, Glowing:true, Invulnerable:true, Tags:["special_villager"], PersistenceRequired: true, Offers:{ Recipes:[ { maxUses: 9999999, buy: { id: "minecraft:cobblestone", count: 2 }, sell: { id: "minecraft:deepslate", count: 1 } } ] } }

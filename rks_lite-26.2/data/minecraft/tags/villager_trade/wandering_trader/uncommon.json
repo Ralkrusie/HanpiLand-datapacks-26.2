@@ -1,0 +1,17 @@
+{
+    "replace": false,
+    "values": [
+        "rks_lite:wandering_trader/hand_of_creation_book",
+        "rks_lite:wandering_trader/sturdy_book",
+        "rks_lite:wandering_trader/echo_shard_to_mowan",
+        "rks_lite:wandering_trader/mowan_to_echo_shard",
+        "rks_lite:wandering_trader/mowan_to_totem",
+        "rks_lite:wandering_trader/mowan_to_phantom_egg",
+        "rks_lite:wandering_trader/mowan_to_luck_potion",
+        "rks_lite:wandering_trader/mowan_to_turtle_master_potion",
+        "rks_lite:wandering_trader/mowan_to_budding_amethyst",
+        "rks_lite:wandering_trader/mowan_to_reinforced_deepslate",
+        "rks_lite:wandering_trader/mowan_elytra_upgrade",
+        "rks_lite:wandering_trader/mowan_totem_upgrade"
+    ]
+}

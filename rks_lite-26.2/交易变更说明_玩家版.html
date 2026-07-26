@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HanpiLand 村民交易变更说明 — 26.2</title>
+    <style>
+        :root {
+            --bg: #1a1a2e;
+            --card: #16213e;
+            --accent: #e2b04a;
+            --text: #e0e0e0;
+            --muted: #999;
+            --green: #4caf84;
+            --red: #e0556a;
+            --blue: #5b9bd5;
+            --purple: #b39ddb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 24px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8em;
+            color: var(--accent);
+            margin: 16px 0 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.95em;
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            color: var(--accent);
+            margin: 36px 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        h3 {
+            font-size: 1.05em;
+            color: var(--blue);
+            margin: 20px 0 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-left: 6px;
+        }
+
+        .badge-new {
+            background: var(--green);
+            color: #fff;
+        }
+
+        .badge-change {
+            background: var(--purple);
+            color: #fff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 24px;
+            background: var(--card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #1f3050;
+            color: var(--accent);
+            padding: 10px 12px;
+            text-align: left;
+            font-size: 0.9em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #2a3a55;
+            font-size: 0.9em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: #1e2d48;
+        }
+
+        .item-in {
+            color: #e0556a;
+        }
+
+        .item-out {
+            color: #4caf84;
+        }
+
+        .arrow {
+            color: var(--muted);
+            margin: 0 6px;
+        }
+
+        .plus {
+            color: #f0a050;
+            font-weight: bold;
+        }
+
+        .note {
+            background: #1e2d40;
+            border-left: 4px solid var(--blue);
+            padding: 10px 16px;
+            margin: 16px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9em;
+        }
+
+        .note-warn {
+            border-left-color: var(--red);
+            background: #2a1e20;
+        }
+
+        .amount-info {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .mowan-icon {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #2a3a55;
+            margin: 32px 0;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .summary-card {
+            background: var(--card);
+            border-radius: 8px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .summary-card .num {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .summary-card .label {
+            font-size: 0.85em;
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>⚡ HanpiLand 村民交易变更</h1>
+        <p class="subtitle">版本 26.2 · 经济系统重大更新 · 魔丸经济全面上线</p>
+
+        <!-- ====== SUMMARY ====== -->
+        <h2>📊 概览</h2>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="num">28</div>
+                <div class="label">新增交易总数</div>
+            </div>
+            <div class="summary-card">
+                <div class="num">12</div>
+                <div class="label">流浪商人新交易</div>
+            </div>
+            <div class="summary-card">
+                <div class="num">16</div>
+                <div class="label">村民新交易</div>
+            </div>
+            <div class="summary-card">
+                <div class="num">8</div>
+                <div class="label">涉及职业</div>
+            </div>
+        </div>
+
+        <div class="note">
+            💡 <strong>魔丸</strong>（带自定义名称和描述的 <code>heart_of_the_sea</code>）已成为本服通用货币。<br>
+            绿宝石交易<b>不受影响</b>，魔丸交易为<b>追加</b>内容。所有魔丸交易不限次数（9999999 次）。
+        </div>
+
+        <!-- ====== WANDERING TRADER ====== -->
+        <h2>🚶 流浪商人 <span class="badge badge-change">交易池扩大</span></h2>
+
+        <div class="note">
+            ⚙️ <strong>系统改动：</strong>稀有交易池（<code>uncommon</code>）随机选取数量：
+            <span style="text-decoration: line-through; color: var(--red);">2 个</span>
+            <span class="arrow">→</span>
+            <span class="amount-info">4 个</span>
+            （候选池约 31 个交易，每个出现概率约 13%）
+        </div>
+
+        <h3>🔹 A 组：物品 → 魔丸（卖物品换魔丸）</h3>
+        <table>
+            <tr>
+                <th>输入</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td><span class="item-in">6× 回响碎片</span></td>
+                <td><span class="item-out">1× <span class="mowan-icon">魔丸</span></span></td>
+            </tr>
+        </table>
+
+        <h3>🔹 B 组：魔丸 → 稀有物品（花魔丸买稀有货）</h3>
+        <table>
+            <tr>
+                <th>输入</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">4× 回响碎片</span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">1× 不死图腾</span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">1× 幻翼刷怪蛋</span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">3× 幸运药水</span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">3× 神龟药水</span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">6× 魔丸</span></td>
+                <td><span class="item-out">1× 紫水晶母岩</span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">2× 魔丸</span></td>
+                <td><span class="item-out">1× 强化深板岩</span></td>
+            </tr>
+        </table>
+
+        <h3>🔹 C 组：魔丸 <span class="plus">+</span> 物品 → 升级版（装备/附魔升级）</h3>
+        <table>
+            <tr>
+                <th>输入 ①</th>
+                <th>输入 ②</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-in">1× 鞘翅</span></td>
+                <td><span class="item-out">鞘翅（耐久III + 经验修补）</span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">9× 魔丸</span></td>
+                <td><span class="item-in">1× 不死图腾</span></td>
+                <td><span class="item-out">不死图腾（护佑 I）</span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">15× 魔丸</span></td>
+                <td><span class="item-in">1× 书</span></td>
+                <td><span class="item-out">附魔书（创造之手 I）</span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">6× 魔丸</span></td>
+                <td><span class="item-in">1× 书</span></td>
+                <td><span class="item-out">附魔书（坚韧 III）</span></td>
+            </tr>
+        </table>
+
+        <hr class="divider">
+
+        <!-- ====== VILLAGERS ====== -->
+        <h2>👤 正常村民 <span class="badge badge-new">新增魔丸交易</span></h2>
+
+        <div class="note">
+            ⚙️ 以下交易<b>追加</b>到对应职业的对应等级交易池中，原版绿宝石交易不受影响。<br>
+            村民每个等级从交易池中随机选 <b>2 个</b>交易展示（原版规则，未改动）。
+        </div>
+
+        <h3>🛡️ 盔甲匠</h3>
+        <table>
+            <tr>
+                <th>等级</th>
+                <th>输入</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td>Lv1</td>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">16× 铁块</span></td>
+            </tr>
+            <tr>
+                <td>Lv3</td>
+                <td><span class="item-in">1× 下界合金锭</span></td>
+                <td><span class="item-out">2× 魔丸</span></td>
+            </tr>
+        </table>
+
+        <h3>⛏️ 工具匠</h3>
+        <table>
+            <tr>
+                <th>等级</th>
+                <th>输入</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td>Lv1</td>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">48× 钻石</span></td>
+            </tr>
+            <tr>
+                <td>Lv2</td>
+                <td><span class="item-in">64× 钻石</span></td>
+                <td><span class="item-out">1× 魔丸</span></td>
+            </tr>
+            <tr>
+                <td>Lv3</td>
+                <td><span class="item-in">2× 魔丸</span></td>
+                <td><span class="item-out">1× 鞘翅</span></td>
+            </tr>
+        </table>
+
+        <h3>⚔️ 武器匠</h3>
+        <table>
+            <tr>
+                <th>等级</th>
+                <th>输入</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td>Lv3</td>
+                <td><span class="item-in">3× 魔丸</span></td>
+                <td><span class="item-out">1× 下界合金锭</span></td>
+            </tr>
+        </table>
+
+        <h3>🌾 农民</h3>
+        <table>
+            <tr>
+                <th>等级</th>
+                <th>输入</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td>Lv2</td>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">32× 金胡萝卜</span></td>
+            </tr>
+            <tr>
+                <td>Lv3</td>
+                <td><span class="item-in">1× 附魔金苹果</span></td>
+                <td><span class="item-out">2× 魔丸</span></td>
+            </tr>
+        </table>
+
+        <h3>🎣 渔夫</h3>
+        <table>
+            <tr>
+                <th>等级</th>
+                <th>输入</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td>Lv1</td>
+                <td><span class="item-in">24× 海绵</span></td>
+                <td><span class="item-out">1× 魔丸</span></td>
+            </tr>
+            <tr>
+                <td>Lv2</td>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">16× 湿海绵</span></td>
+            </tr>
+        </table>
+
+        <h3>🥩 屠夫</h3>
+        <table>
+            <tr>
+                <th>等级</th>
+                <th>输入</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td>Lv1</td>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">64× 熟牛肉</span></td>
+            </tr>
+        </table>
+
+        <h3>✨ 牧师</h3>
+        <table>
+            <tr>
+                <th>等级</th>
+                <th>输入</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td>Lv1</td>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-out">64× 幻翼膜</span></td>
+            </tr>
+        </table>
+
+        <h3>📖 图书管理员 <span class="badge badge-change">Lv1/2 交易数提升</span></h3>
+        <div class="note">
+            ⚙️ <strong>系统改动：</strong>Lv1/2 随机选取数量：
+            <span style="text-decoration: line-through; color: var(--red);">2 个</span>
+            <span class="arrow">→</span>
+            <span class="amount-info">3 个</span>
+            （Lv1 共 5 选 3 ≈ 60%；Lv2 共 6 选 3 = 50%）
+        </div>
+        <table>
+            <tr>
+                <th>等级</th>
+                <th>输入 ①</th>
+                <th>输入 ②</th>
+                <th>输出</th>
+            </tr>
+            <tr>
+                <td>Lv1</td>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-in">太空漫游者 III 附魔书</span></td>
+                <td><span class="item-out">2× 太空漫游者 II 附魔书</span></td>
+            </tr>
+            <tr>
+                <td>Lv1</td>
+                <td><span class="item-in">1× 魔丸</span></td>
+                <td><span class="item-in">太空漫游者 II 附魔书</span></td>
+                <td><span class="item-out">2× 太空漫游者 I 附魔书</span></td>
+            </tr>
+            <tr>
+                <td>Lv2</td>
+                <td><span class="item-in">2× 魔丸</span></td>
+                <td><span class="item-in">神圣恩典 I 附魔书</span></td>
+                <td><span class="item-out">恶魔契约 I 附魔书</span></td>
+            </tr>
+            <tr>
+                <td>Lv2</td>
+                <td><span class="item-in">2× 魔丸</span></td>
+                <td><span class="item-in">恶魔契约 I 附魔书</span></td>
+                <td><span class="item-out">神圣恩典 I 附魔书</span></td>
+            </tr>
+        </table>
+
+        <hr class="divider">
+
+        <!-- ====== NOTES ====== -->
+        <h2>📋 重要说明</h2>
+
+        <div class="note note-warn">
+            ⚠️ <strong>魔丸辨别：</strong>只有携带完整名称（"魔丸"）、描述（"Beluga人民银行"）、数据标签（<code>is_money: true</code>）和附魔光效的
+            <code>heart_of_the_sea</code> 才被识别为魔丸。普通海洋之心<b>无法</b>用于交易。
+        </div>
+
+        <div class="note">
+            🎲 <strong>交易随机性：</strong>村民和流浪商人的交易是从交易池中<b>随机选取</b>的，并非每次都会出现所有交易。升级村民或等待流浪商人刷新可能会看到不同组合。
+        </div>
+
+        <div class="note">
+            🔄 <strong>交易不消耗：</strong>所有新增魔丸交易的使用次数均为 <b>9,999,999</b>（近似无限），不会因重复交易而锁定。
+        </div>
+
+        <p style="text-align: center; color: var(--muted); margin-top: 40px; font-size: 0.85em;">
+            HanpiLand 管理组 · 26.2 经济更新 · 如有疑问请联系管理员
+        </p>
+
+    </div>
+</body>
+
+</html>

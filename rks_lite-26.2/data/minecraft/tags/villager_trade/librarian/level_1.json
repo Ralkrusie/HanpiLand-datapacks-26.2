@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "values": [
+        "rks_lite:librarian/1/mowan_taiko3_to_taiko2",
+        "rks_lite:librarian/1/mowan_taiko2_to_taiko1"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "values": [
+        "rks_lite:librarian/2/mowan_grace_to_contract",
+        "rks_lite:librarian/2/mowan_contract_to_grace"
+    ]
+}
