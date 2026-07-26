@@ -68,6 +68,6 @@ execute as @a[scores={ra_return_cd=0}] run function rks_extra:ra_return
 scoreboard players set * s_online 0
 scoreboard players set @a s_online 1
 
-# === 服务器安全管理员面板右键检测 ===
+# === 服务器安全管理面板右键检测 ===
 execute as @a[tag=player] if score @s extra_ap_used > @s extra_ap_prev at @s if items entity @s weapon *[custom_data~{panel:"security"}] run function rks_extra:admin_panel/open
 execute as @a[tag=player] run scoreboard players operation @s extra_ap_prev = @s extra_ap_used

@@ -8,6 +8,8 @@ execute as @a unless score @s rks_civil_joined matches 1 run function rks_civil:
 
 # 区域检测节流：每 20 tick（1 秒）执行一次
 scoreboard players add #tick_timer rks_civil_timer 1
+
+# 区域检测（包含计时器重置）
 execute if score #tick_timer rks_civil_timer matches 20.. run function rks_civil:area/check_all
 
 # === 管理员面板右键检测 ===

@@ -5,7 +5,7 @@
 		"color": "light_purple",
 		"extra": [
 			{
-				"translate": " 攻击附加额外穿透伤害",
+				"translate": " 近战攻击附加额外穿透伤害",
 				"color": "gray",
 				"italic": true
 			}

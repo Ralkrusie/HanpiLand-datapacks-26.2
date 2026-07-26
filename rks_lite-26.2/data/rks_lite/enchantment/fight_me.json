@@ -5,7 +5,7 @@
 		"color": "#ff442f",
 		"extra": [
 			{
-				"translate": " 攻击时使双方同时获得力量效果",
+				"translate": " 近战攻击给予双方短暂力量效果",
 				"color": "gray",
 				"italic": true
 			}
@@ -33,7 +33,7 @@
 					}
 				}
 			},
-            {
+			{
 				"enchanted": "attacker",
 				"affected": "attacker",
 				"effect": {

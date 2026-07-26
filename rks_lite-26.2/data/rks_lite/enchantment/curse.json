@@ -5,7 +5,7 @@
 		"color": "light_purple",
 		"extra": [
 			{
-				"translate": " 攻击附带中毒、凋零、寄生与点燃效果",
+				"translate": " 近战攻击附带中毒、凋零、寄生与点燃",
 				"color": "gray",
 				"italic": true
 			}

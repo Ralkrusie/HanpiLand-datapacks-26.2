@@ -5,7 +5,7 @@
 		"color": "#9119d6",
 		"extra": [
 			{
-				"translate": " 攻击使自身中毒",
+				"translate": " 近战攻击使自身中毒",
 				"color": "gray",
 				"italic": true
 			}

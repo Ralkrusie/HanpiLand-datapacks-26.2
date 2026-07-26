@@ -5,7 +5,7 @@
 		"color": "#C2A36C",
 		"extra": [
 			{
-				"translate": " 攻击附带缓慢效果",
+				"translate": " 近战攻击附带缓慢",
 				"color": "gray",
 				"italic": true
 			}

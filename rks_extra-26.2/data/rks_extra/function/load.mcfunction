@@ -15,7 +15,7 @@ scoreboard objectives add calc dummy
 
 scoreboard objectives add ra_return_cd dummy
 
-# === 服务器安全管理员面板 ===
+# === 服务器安全管理面板 ===
 scoreboard objectives add extra_ap_used minecraft.used:minecraft.carrot_on_a_stick
 scoreboard objectives add extra_ap_prev dummy
 
