@@ -29,7 +29,7 @@
     "max_uses": 9999999,
     "reputation_discount": 0.05,
     "wants": {
-        "count": 6.0,
+        "count": 3.0,
         "id": "minecraft:echo_shard"
     }
 }

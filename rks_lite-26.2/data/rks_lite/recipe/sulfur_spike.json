@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "building",
+    "key": {
+        "D": "minecraft:pointed_dripstone",
+        "S": "minecraft:sulfur"
+    },
+    "pattern": [
+        "DDD",
+        "DSD",
+        "DDD"
+    ],
+    "result": {
+        "count": 8,
+        "id": "minecraft:sulfur_spike"
+    }
+}

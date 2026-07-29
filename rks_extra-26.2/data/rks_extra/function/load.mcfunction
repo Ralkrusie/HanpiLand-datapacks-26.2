@@ -32,3 +32,6 @@ scoreboard players set #Global tnt_timer 0
 # 初始化防爆区存储（首次加载时写入默认区域，后续保留游戏内编辑结果）
 function rks_extra:tnt_free_area/init
 
+# === 硫方怪拆弹系统 ===
+scoreboard objectives add cube_fuse dummy
+

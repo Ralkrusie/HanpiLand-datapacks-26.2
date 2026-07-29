@@ -1,7 +1,7 @@
 {
     "gives": {
         "id": "minecraft:heart_of_the_sea",
-        "count": 2,
+        "count": 4,
         "components": {
             "minecraft:custom_name": {
                 "text": "魔丸",

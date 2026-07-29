@@ -40,7 +40,7 @@
             "type": "minecraft:simple_state_provider",
             "state": {
               "Name": "minecraft:mangrove_leaves",
-                "Properties": {
+              "Properties": {
                 "persistent": "false"
               }
             }
@@ -93,7 +93,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "vehicle": {}
+                  "minecraft:vehicle": {}
                 }
               }
             },
@@ -103,7 +103,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "flags": {
+                  "minecraft:flags": {
                     "is_sneaking": true
                   }
                 }

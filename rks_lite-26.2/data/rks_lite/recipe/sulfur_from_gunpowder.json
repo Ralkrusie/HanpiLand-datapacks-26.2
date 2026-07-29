@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "building",
+    "ingredients": [
+        "minecraft:gunpowder",
+        "minecraft:gunpowder",
+        "minecraft:gunpowder",
+        "minecraft:gunpowder",
+        "minecraft:water_bucket"
+    ],
+    "result": {
+        "id": "minecraft:sulfur"
+    }
+}
