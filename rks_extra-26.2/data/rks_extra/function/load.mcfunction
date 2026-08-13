@@ -1,4 +1,4 @@
-tellraw @a {text:"已加载rks_extra数据包for 26.2+, v2.1",color:"yellow"}
+tellraw @a {text:"已加载rks_extra数据包for 26.2+, v2.2",color:"yellow"}
 scoreboard objectives add s_joined dummy
 scoreboard objectives add good dummy
 scoreboard objectives add loop dummy

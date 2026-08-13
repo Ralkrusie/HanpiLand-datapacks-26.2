@@ -3,7 +3,7 @@
         "id": "minecraft:reinforced_deepslate"
     },
     "max_uses": 9999999,
-    "reputation_discount": 0.05,
+    "reputation_discount": 0,
     "wants": {
         "count": 2.0,
         "id": "minecraft:heart_of_the_sea",

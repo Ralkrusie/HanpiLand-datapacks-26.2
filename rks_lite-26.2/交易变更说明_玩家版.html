@@ -206,11 +206,11 @@
                 <div class="label">新增交易总数</div>
             </div>
             <div class="summary-card">
-                <div class="num">12</div>
+                <div class="num">16</div>
                 <div class="label">流浪商人新交易</div>
             </div>
             <div class="summary-card">
-                <div class="num">16</div>
+                <div class="num">12</div>
                 <div class="label">村民新交易</div>
             </div>
             <div class="summary-card">
@@ -223,6 +223,10 @@
             💡 <strong>魔丸</strong>（带自定义名称和描述的 <code>heart_of_the_sea</code>）已成为本服通用货币。<br>
             绿宝石交易<b>不受影响</b>，魔丸交易为<b>追加</b>内容。所有魔丸交易不限次数（9999999 次）。
         </div>
+        <div class="note note-warn">
+            🔒 <strong>魔丸交易不打折：</strong>所有魔丸相关交易均<b>不受声望/治愈/供求影响</b>，价格永远固定。<br>
+            村庄英雄效果的折扣仍然生效（此为原版硬编码，无法禁用）。
+        </div>
 
         <!-- ====== WANDERING TRADER ====== -->
         <h2>🚶 流浪商人 <span class="badge badge-change">交易池扩大</span></h2>
@@ -232,7 +236,7 @@
             <span style="text-decoration: line-through; color: var(--red);">2 个</span>
             <span class="arrow">→</span>
             <span class="amount-info">4 个</span>
-            （候选池约 31 个交易，每个出现概率约 13%）
+            （候选池约 35 个交易，每个出现概率约 11%）
         </div>
 
         <h3>🔹 A 组：物品 → 魔丸（卖物品换魔丸）</h3>
@@ -240,6 +244,22 @@
             <tr>
                 <th>输入</th>
                 <th>输出</th>
+            </tr>
+            <tr>
+                <td><span class="item-in">1× 下界合金锭</span></td>
+                <td><span class="item-out">4× <span class="mowan-icon">魔丸</span></span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">1× 附魔金苹果</span></td>
+                <td><span class="item-out">4× <span class="mowan-icon">魔丸</span></span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">32× 钻石</span></td>
+                <td><span class="item-out">1× <span class="mowan-icon">魔丸</span></span></td>
+            </tr>
+            <tr>
+                <td><span class="item-in">8× 海绵</span></td>
+                <td><span class="item-out">1× <span class="mowan-icon">魔丸</span></span></td>
             </tr>
             <tr>
                 <td><span class="item-in">3× 回响碎片</span></td>
@@ -334,11 +354,6 @@
                 <td><span class="item-in">1× 魔丸</span></td>
                 <td><span class="item-out">16× 铁块</span></td>
             </tr>
-            <tr>
-                <td>Lv3</td>
-                <td><span class="item-in">1× 下界合金锭</span></td>
-                <td><span class="item-out">4× 魔丸</span></td>
-            </tr>
         </table>
 
         <h3>⛏️ 工具匠</h3>
@@ -352,11 +367,6 @@
                 <td>Lv1</td>
                 <td><span class="item-in">1× 魔丸</span></td>
                 <td><span class="item-out">32× 钻石</span></td>
-            </tr>
-            <tr>
-                <td>Lv2</td>
-                <td><span class="item-in">32× 钻石</span></td>
-                <td><span class="item-out">1× 魔丸</span></td>
             </tr>
             <tr>
                 <td>Lv3</td>
@@ -391,11 +401,6 @@
                 <td><span class="item-in">1× 魔丸</span></td>
                 <td><span class="item-out">32× 金胡萝卜</span></td>
             </tr>
-            <tr>
-                <td>Lv3</td>
-                <td><span class="item-in">1× 附魔金苹果</span></td>
-                <td><span class="item-out">4× 魔丸</span></td>
-            </tr>
         </table>
 
         <h3>🎣 渔夫</h3>
@@ -404,11 +409,6 @@
                 <th>等级</th>
                 <th>输入</th>
                 <th>输出</th>
-            </tr>
-            <tr>
-                <td>Lv1</td>
-                <td><span class="item-in">8× 海绵</span></td>
-                <td><span class="item-out">1× 魔丸</span></td>
             </tr>
             <tr>
                 <td>Lv2</td>

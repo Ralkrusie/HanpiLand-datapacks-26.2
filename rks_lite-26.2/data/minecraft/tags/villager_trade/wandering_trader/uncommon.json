@@ -13,6 +13,10 @@
         "rks_lite:wandering_trader/mowan_to_reinforced_deepslate",
         "rks_lite:wandering_trader/mowan_elytra_upgrade",
         "rks_lite:wandering_trader/mowan_totem_upgrade",
-        "rks_lite:wandering_trader/mowan_to_nine_lives_cat"
+        "rks_lite:wandering_trader/mowan_to_nine_lives_cat",
+        "rks_lite:wandering_trader/netherite_to_mowan",
+        "rks_lite:wandering_trader/egap_to_mowan",
+        "rks_lite:wandering_trader/sponge_to_mowan",
+        "rks_lite:wandering_trader/diamond_to_mowan"
     ]
 }

@@ -1,7 +1,7 @@
 {
     "gives": {
         "id": "minecraft:heart_of_the_sea",
-        "count": 1,
+        "count": 4,
         "components": {
             "minecraft:custom_name": {
                 "text": "魔丸",
@@ -27,9 +27,8 @@
         }
     },
     "max_uses": 9999999,
-    "reputation_discount": 0.05,
+    "reputation_discount": 0,
     "wants": {
-        "count": 8.0,
-        "id": "minecraft:sponge"
+        "id": "minecraft:netherite_ingot"
     }
 }

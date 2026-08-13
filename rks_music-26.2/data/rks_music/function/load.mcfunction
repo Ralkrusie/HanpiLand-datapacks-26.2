@@ -1,1 +1,1 @@
-tellraw @a {text:"已加载rks_music数据包 for 26.2+, v2.3",color:"yellow" }
+tellraw @a {text:"已加载rks_music数据包 for 26.2+, v2.4",color:"yellow" }
